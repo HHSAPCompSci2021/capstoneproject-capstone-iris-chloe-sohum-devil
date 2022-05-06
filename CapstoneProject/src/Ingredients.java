@@ -8,14 +8,14 @@ import processing.core.PApplet;
  * @author cpoon870
  * @version 5/6/2022
  */
-public class Ingredients extends PApplet implements Interactions{
+public class Ingredients extends DrawingSurface implements Interactions{
 
 	private Image picture;
 	private String name;
 	private int x;
 	private int y;
 	
-	public void draw() {
+	public void draw(PApplet drawer) {
 		
 	}
 
