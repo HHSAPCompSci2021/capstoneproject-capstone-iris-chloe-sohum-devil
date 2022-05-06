@@ -1,4 +1,4 @@
 
-public class Interactions {
+public interface Interactions {
 
 }
