@@ -26,18 +26,25 @@ public class Counter {
 	}
 	
 	/**
-	 * The passed in dish gets placed on the counter and is stored there
+	 * The passed in dish gets placed on the counter and is stored there.
+	 * If there is already a dish on the counter, the new dish will not be placed and old dish will stay there.
 	 * 
 	 * @param order the dish that is getting placed on the counter
+	 * @return returns true if the dish is successfully placed (nothing already on the counter), false otherwise
 	 */
-	public void place(Orders order) {
-		holding = order;
+	public boolean place(Orders order) {
+		if(holding == null) {
+			holding = order;
+			return true;
+		}
+		return false;
 	}
 	
 	/**
 	 * The dish that was on the counter is taken off the counter.
 	 * 
 	 * @return the dish that is on the counter (null is returned if nothing was on the table)
+	 * @post the counter becomes empty (not storing a dish)
 	 */
 	public Orders pickUp() {
 		Orders temp = holding;
