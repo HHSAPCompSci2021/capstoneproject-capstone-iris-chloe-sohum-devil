@@ -9,8 +9,12 @@ public class Counter implements Interactions{
 
 	private Orders holding;
 	
-	public Counter () {
+	public Counter() {
 		holding = null;
+	}
+	
+	public Counter(Orders order) {
+		holding = order;
 	}
 	
 	public void place(Orders order) {
@@ -18,6 +22,8 @@ public class Counter implements Interactions{
 	}
 	
 	public Orders pickUp() {
+		Orders temp = holding;
 		holding = null;
+		return temp;
 	}
 }
