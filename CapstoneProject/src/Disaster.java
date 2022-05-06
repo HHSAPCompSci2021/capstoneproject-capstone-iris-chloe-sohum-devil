@@ -11,8 +11,16 @@ public class Disaster {
 	private String type;
 	private boolean resolved;
 	
-	public Disaster() {
-		type = "";
+	/**
+	 * Constructor that takes in a String to identify the disaster's type
+	 * 
+	 * @param s String of the disaster type, where capitalization matters ("Fire", "Flood", "Blackout")
+	 * @throws IllegalArgumentException
+	 */
+	public Disaster(String s) throws IllegalArgumentException{
+		if (!s.equals("Fire") && !s.equals("Flood") && !s.equals("Blackout"))
+			throw new IllegalArgumentException();
+		type = s;
 		resolved = false;
 	}
 }
