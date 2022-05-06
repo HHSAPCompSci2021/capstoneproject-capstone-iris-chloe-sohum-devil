@@ -1,5 +1,3 @@
-import java.awt.Image;
-import javax.swing.ImageIcon;
 
 /**
  * A disaster in the game that the player has to account for and fix in a set amount of time.
@@ -46,11 +44,20 @@ public class Disaster {
 	}
 	
 	/**
-	 * Resolved the disaster
+	 * Resolves the disaster
 	 * 
 	 * @post sets isResolved() to true
 	 */
 	public void disasterResolved() {
 		resolved = true;
+	}
+	
+	/**
+	 * Gets a String containing the image file name for the disaster resolving equipment (sandbags, fire extinguisher, lightswitch)
+	 * 
+	 * @return String with the disaster equipment image file name
+	 */
+	public String getImage() {
+		return picture;
 	}
 }
