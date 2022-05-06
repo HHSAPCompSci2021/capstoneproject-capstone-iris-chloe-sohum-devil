@@ -1,5 +1,5 @@
 
-/*
+/**
  * A disaster in the game that the player has to account for and fix in a set amount of time.
  * Each type of disaster has its own unique fix.
  * 

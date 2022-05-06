@@ -1,11 +1,11 @@
-/*
+/**
  * The table that the player can place one dish on
  * 
  * @author Iris Chou
  * @version 5/6/2022
  */
 
-public class Counter implements Interactions{
+public class Counter {
 
 	private Orders holding;
 	
