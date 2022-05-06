@@ -7,4 +7,8 @@
  */
 public interface Interactions {
 	
+	public void interact();
+	
+	public void disasterResolve();
+	
 }
