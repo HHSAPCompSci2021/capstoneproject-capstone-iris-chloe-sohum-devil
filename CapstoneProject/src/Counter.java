@@ -5,16 +5,19 @@
  * @version 5/6/2022
  */
 
-public class Counter extends Interactions{
+public class Counter implements Interactions{
 
 	private Orders holding;
 	
 	public Counter () {
-		super();
 		holding = null;
 	}
 	
 	public void place(Orders order) {
 		holding = order;
+	}
+	
+	public Orders pickUp() {
+		holding = null;
 	}
 }
