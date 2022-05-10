@@ -22,7 +22,7 @@ public class FirstScreen extends Screen {
 
 	public void draw() {
 
-		surface.background(255,255,255);
+		surface.background(255,255,25);
 		
 		
 		surface.rect(button.x, button.y, button.width, button.height, 10, 10, 10, 10);
