@@ -44,6 +44,11 @@ public class Ingredients extends DrawingSurface implements Interactions{
 		}
 	}
 	
+	/**
+	 * draws the ingredients onto the screen
+	 * 
+	 * @param drawer a PApplet to draw the ingredients on
+	 */
 	public void draw(PApplet drawer) {
 		
 		image(picture, x, y);
@@ -51,9 +56,24 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	}
 
 	@Override
-	public void interact() {
+	public Ingredients pickUp() {
+		return this;
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public Ingredients dropOff() {
+		return this;
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean loseLife() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 }

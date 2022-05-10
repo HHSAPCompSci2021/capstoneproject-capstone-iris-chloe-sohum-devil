@@ -7,6 +7,20 @@
  */
 public interface Interactions {
 	
-	public void interact();
+	/**
+	 * picks up each object
+	 */
+	public Object pickUp();
 	
+	/**
+	 * puts down each object
+	 */
+	public Object dropOff();
+	
+	/**
+	 * subtracts a life from the player
+	 * 
+	 * @return true if the player should lose a life
+	 */
+	public boolean loseLife();
 }
