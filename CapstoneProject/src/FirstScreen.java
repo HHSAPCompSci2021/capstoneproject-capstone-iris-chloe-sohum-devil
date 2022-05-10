@@ -16,7 +16,7 @@ public class FirstScreen extends Screen {
 		super(800,600);
 		this.surface = surface;
 
-		button = new Rectangle(350,500,200,100);
+		button = new Rectangle(300,500,225,100);
 	}
 
 
@@ -31,6 +31,7 @@ public class FirstScreen extends Screen {
 		float w = surface.textWidth(str);
 		surface.textSize(25);
 		surface.text(str, button.x+button.width/2-w/2, button.y+button.height/2);
+		
 		surface.text("Here are the controls for the game:", 25, 25);
 		surface.text("- To move around, use the up, down, left, and right arros keys", 25, 75);
 		surface.text("- To pick up or drop off ingredients, press the spacebar (you\nmay only have one ingredient at a time)", 25, 125);
