@@ -14,10 +14,7 @@ public class SecondScreen extends Screen {
 	private DrawingSurface surface;
 	public SecondScreen(DrawingSurface surface) {
 		super(800,600);
-	}
-
-
-	public void spawnNewMario() {
+		this.surface = surface;
 
 	}
 
@@ -32,7 +29,8 @@ public class SecondScreen extends Screen {
 	// sequence and after the last line is read, the first 
 	// line is executed again.
 	public void draw() {
-		
+		surface.background(0,255,255);   
+
 	}
 
 	
