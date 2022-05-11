@@ -9,8 +9,8 @@ import processing.core.PImage;
  * Ingredients can be picked up and have their own icons on the grid, extends the interactions class
  * The ingredients are: onion, squirrel, rotten tomato, rabbit, smelly cheese, radioactive slime
  * 
- * @author cpoon870
- * @version 5/6/2022
+ * @author cpoon870 & Iris Chou
+ * @version 5/11/2022
  */
 public class Ingredients extends DrawingSurface implements Interactions{
 
@@ -58,9 +58,13 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	}
 
 	@Override
+	/**
+	 * Returns this ingredient, so it can be picker up
+	 * 
+	 * @return returns this ingredient (itself)
+	 */
 	public Ingredients pickUp() {
 		return this;
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -73,9 +77,7 @@ public class Ingredients extends DrawingSurface implements Interactions{
 
 	@Override
 	public boolean loseLife() {
-		// TODO Auto-generated method stub
 		return false;
 	}
-
 	
 }

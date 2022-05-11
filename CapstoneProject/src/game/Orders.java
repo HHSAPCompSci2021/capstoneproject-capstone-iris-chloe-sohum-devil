@@ -40,12 +40,13 @@ public class Orders extends DrawingSurface implements Interactions{
 	public boolean completed() {
 		Hole hole = new Hole();
 		boolean complete = true;
-		ArrayList<Ingredients> holeContents = hole.drop();
+		ArrayList<Ingredients> holeContents = Hole.drop();
 		for(int i = 0; i < ingredientsList.size(); i ++) {
 			if(!holeContents.contains(ingredientsList.get(i))) {
 				complete = false;
 			}
 		}
+		
 		return complete;
 	}
 	
@@ -60,11 +61,21 @@ public class Orders extends DrawingSurface implements Interactions{
 	}
 
 	@Override
+	/**
+	 * Returns this order, so it can be picked up
+	 * 
+	 * @return returns this order (itself)
+	 */
 	public Orders pickUp() {
 		return this;
 	}
 
 	@Override
+	/**
+	 * Returns this order, so it can be dropped off
+	 * 
+	 * @return returns this order (itself)
+	 */
 	public Orders dropOff() {
 		return this;
 	}
