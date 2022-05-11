@@ -1,3 +1,4 @@
+package game;
 
 /**
  * The hole in the ground that the player drops food through

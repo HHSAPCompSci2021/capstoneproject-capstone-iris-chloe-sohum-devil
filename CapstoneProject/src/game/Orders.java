@@ -1,4 +1,7 @@
+package game;
 import java.util.ArrayList;
+
+import Core.DrawingSurface;
 
 /**
   * The order class will be used to create an order, randomizing between the possible ingredients

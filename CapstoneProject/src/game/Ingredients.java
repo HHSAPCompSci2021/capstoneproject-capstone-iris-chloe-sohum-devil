@@ -1,5 +1,7 @@
+package game;
 import java.awt.Image;
 
+import Core.DrawingSurface;
 import processing.core.PApplet;
 import processing.core.PImage;
 

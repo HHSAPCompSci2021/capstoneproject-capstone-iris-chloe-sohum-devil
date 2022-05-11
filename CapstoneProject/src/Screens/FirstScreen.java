@@ -1,9 +1,12 @@
+package Screens;
 
 
 
 
 import java.awt.Point;
 import java.awt.Rectangle;
+
+import Core.DrawingSurface;
 
 
 public class FirstScreen extends Screen {

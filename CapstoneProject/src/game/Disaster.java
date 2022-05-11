@@ -1,3 +1,4 @@
+package game;
 
 /**
  * A disaster in the game that the player has to account for and fix in a set amount of time.

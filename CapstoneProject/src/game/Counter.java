@@ -1,3 +1,4 @@
+package game;
 /**
  * The table that the player can place one dish on
  * 

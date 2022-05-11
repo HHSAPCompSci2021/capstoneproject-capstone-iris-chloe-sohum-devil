@@ -1,3 +1,4 @@
+package game;
 
 /**
  *  A superclass for anything that can be interacted with (picked up and dropped/used)

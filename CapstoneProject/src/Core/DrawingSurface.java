@@ -1,6 +1,10 @@
+package Core;
 import java.awt.Point;
 import java.util.ArrayList;
 
+import Screens.FirstScreen;
+import Screens.Screen;
+import Screens.SecondScreen;
 import processing.core.PApplet;
 
 public class DrawingSurface extends PApplet{
