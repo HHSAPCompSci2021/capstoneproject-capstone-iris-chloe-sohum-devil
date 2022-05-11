@@ -40,7 +40,7 @@ public class Orders extends DrawingSurface implements Interactions{
 	public boolean completed() {
 		Hole hole = new Hole();
 		boolean complete = true;
-		ArrayList<Ingredients> holeContents = hole.dropped();
+		ArrayList<Ingredients> holeContents = hole.drop();
 		for(int i = 0; i < ingredientsList.size(); i ++) {
 			if(!holeContents.contains(ingredientsList.get(i))) {
 				complete = false;

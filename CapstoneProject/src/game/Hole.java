@@ -1,4 +1,5 @@
 package game;
+import java.util.*;
 
 /**
  * The hole in the ground that the player drops food through
@@ -9,6 +10,10 @@ package game;
 public class Hole {
 	
 	public Hole() {
+		
+	}
+	
+	public ArrayList<Ingredients> drop() {
 		
 	}
 	
