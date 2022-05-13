@@ -33,7 +33,6 @@ public class Ingredients implements Interactions{
 		this.x = x;
 		this.y = y;
 		if(name == 1) {
-<<<<<<< HEAD
 			picture = surface.loadImage("img/onion.jpg");
 		} else if (name == 2) {
 			picture = surface.loadImage("img/squirrel.jpg");
@@ -45,19 +44,6 @@ public class Ingredients implements Interactions{
 			picture = surface.loadImage("img/cheese.jpg");
 		} else if (name == 6) {
 			picture = surface.loadImage("img/slime.png");
-=======
-			picture = drawer.loadImage("src/onion.jpg");
-		} else if (name == 2) {
-			picture = drawer.loadImage("src/squirrel.jpg");
-		} else if (name == 3) {
-			picture = drawer.loadImage("src/tomato.png");
-		} else if (name == 4) {
-			picture = drawer.loadImage("src/rabbit.png");
-		} else if (name == 5) {
-			picture = drawer.loadImage("src/cheese.jpg");
-		} else if (name == 6) {
-			picture = drawer.loadImage("src/slime.png");
->>>>>>> 860f30c7aa5a11338c4c14ecb391c50a5716e5e8
 		}
 	}
 	
