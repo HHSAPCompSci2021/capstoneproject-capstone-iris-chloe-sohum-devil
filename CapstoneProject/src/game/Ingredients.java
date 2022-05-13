@@ -14,7 +14,6 @@ import processing.core.PImage;
  */
 public class Ingredients implements Interactions{
 
-	private DrawingSurface surface;
 	private PImage picture;
 	private int name;
 	private int x;
@@ -33,17 +32,17 @@ public class Ingredients implements Interactions{
 		this.x = x;
 		this.y = y;
 		if(name == 1) {
-			picture = surface.loadImage("img/onion.jpg");
+			picture = drawer.loadImage("img/onion.jpg");
 		} else if (name == 2) {
-			picture = surface.loadImage("img/squirrel.jpg");
+			picture = drawer.loadImage("img/squirrel.jpg");
 		} else if (name == 3) {
-			picture = surface.loadImage("img/tomato.png");
+			picture = drawer.loadImage("img/tomato.png");
 		} else if (name == 4) {
-			picture = surface.loadImage("img/rabbit.png");
+			picture = drawer.loadImage("img/rabbit.png");
 		} else if (name == 5) {
-			picture = surface.loadImage("img/cheese.jpg");
+			picture = drawer.loadImage("img/cheese.jpg");
 		} else if (name == 6) {
-			picture = surface.loadImage("img/slime.png");
+			picture = drawer.loadImage("img/slime.png");
 		}
 	}
 	
