@@ -1,20 +1,26 @@
 package Screens;
 
-
-
-
 import java.awt.Point;
 import java.awt.Rectangle;
 
 import Core.DrawingSurface;
 
-
+/**
+ * the opening screen for the player that shows the controls for the game and a button to start
+ * 
+ * @author cpoon870
+ * @version 5/13/2022
+ */
 public class FirstScreen extends Screen {
 
 	private DrawingSurface surface;
 	
 	private Rectangle button;
 
+	/**
+	 * makes a new screen on the drawing surface with a button
+	 * @param surface the drawing surface to draw the player on
+	 */
 	public FirstScreen(DrawingSurface surface) {
 		super(800,600);
 		this.surface = surface;
@@ -23,6 +29,9 @@ public class FirstScreen extends Screen {
 	}
 
 
+	/**
+	 * draws the button to click and the text for the instructions of the game
+	 */
 	public void draw() {
 
 		surface.background(255,255,255);
@@ -46,7 +55,9 @@ public class FirstScreen extends Screen {
 
 
 
-	
+	/**
+	 * checks if the mouse was pressed and if it is inside the button
+	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX,surface.mouseY));
 		if (button.contains(p))
