@@ -99,7 +99,9 @@ public class Orders extends DrawingSurface implements Interactions{
 		return this;
 	}
 
-	@Override
+	/**
+	 * takes a life away from the player if the orders are all filled
+	 */
 	public boolean loseLife() {
 		if(filled()) {
 			return true;

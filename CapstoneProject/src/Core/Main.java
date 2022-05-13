@@ -6,6 +6,12 @@ import javax.swing.JFrame;
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 
+/**
+ * main class to run the program and open up a new drawing surface
+ * 
+ * @author cpoon870
+ * @version 5/13/2022
+ */
 public class Main {
 
 	public static void main(String[] args) {
