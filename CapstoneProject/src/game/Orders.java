@@ -1,5 +1,6 @@
 package game;
 import java.util.ArrayList;
+import processing.core.PApplet;
 
 import Core.DrawingSurface;
 
@@ -15,7 +16,7 @@ public class Orders extends DrawingSurface implements Interactions{
 	private int orderNum;
 	
 	/**
-	 * creates a new order with a random amount of ingredients needed, from 1 to 5 ingredients
+	 * creates a new order with a random amount of ingredients needed, from 1 to 4 ingredients
 	 * random adds ingredients to the order
 	 */
 	public Orders() {
@@ -27,9 +28,22 @@ public class Orders extends DrawingSurface implements Interactions{
 	
 	/**
 	 * draws the order to the screen on the bar at the top
+	 * 
+	 * @param drawer PApplet for the order to be drawn on
+	 * @param count the position that the order occupies on the order shelf (0 to 4)
+	 * @post drawer is set to noStroke()
+	 * @post the drawer fill() is set to white
 	 */
-	public void draw() {
-		
+	public void draw(PApplet drawer, int count) {
+		double width = drawer.width * 3.0 / 20;
+		double height = drawer.height / 5.0;
+		double x = width * count + 5;
+		drawer.fill(255);
+		drawer.noStroke();
+		drawer.rect((float)x, 0, (float)(width - 10), (float)height);
+		for(int i = 0; i < ingredientsList.size(); i++) {
+			ingredientsList.get(i).draw(drawer, x + 5 + (width - 10) / 2 * (i % 2), 5 + height / 2 * (i / 2));
+		}
 	}
 	
 	/**

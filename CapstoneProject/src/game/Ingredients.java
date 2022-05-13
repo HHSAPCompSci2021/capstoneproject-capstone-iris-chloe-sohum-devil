@@ -53,8 +53,19 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	 */
 	public void draw(PApplet drawer) {
 		
-		image(picture, x, y);
+		drawer.image(picture, x, y);
 		
+	}
+	
+	/**
+	 * Draws the ingredient onto the screen at the given location (in pixels)
+	 * 
+	 * @param drawer a PApplet to draw the ingredients on
+	 * @param xLoc the x-location for the ingredient to be drawn at
+	 * @param xLoc the y-location for the ingredient to be drawn at
+	 */
+	public void draw(PApplet drawer, double xLoc, double yLoc) {
+		drawer.image(picture, (int)xLoc, (int)yLoc);
 	}
 
 	@Override
