@@ -12,7 +12,7 @@ import processing.core.PImage;
  * @author cpoon870 & Iris Chou
  * @version 5/13/2022
  */
-public class Ingredients extends DrawingSurface implements Interactions{
+public class Ingredients implements Interactions{
 
 	private PImage picture;
 	private int name;
@@ -27,25 +27,22 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	 * @param x the x coordinate of the ingredient
 	 * @param y the y coordinate of the ingredient
 	 */
-	public Ingredients(int name, int x, int y) {
+	public Ingredients(PApplet drawer, int name, int x, int y) {
 		this.name = name;
 		this.x = x;
 		this.y = y;
-	}
-	
-	public void setup() {
 		if(name == 1) {
-			picture = loadImage("src/onion.jpg");
+			picture = drawer.loadImage("src/onion.jpg");
 		} else if (name == 2) {
-			picture = loadImage("src/squirrel.jpg");
+			picture = drawer.loadImage("src/squirrel.jpg");
 		} else if (name == 3) {
-			picture = loadImage("src/tomato.png");
+			picture = drawer.loadImage("src/tomato.png");
 		} else if (name == 4) {
-			picture = loadImage("src/rabbit.png");
+			picture = drawer.loadImage("src/rabbit.png");
 		} else if (name == 5) {
-			picture = loadImage("src/cheese.jpg");
+			picture = drawer.loadImage("src/cheese.jpg");
 		} else if (name == 6) {
-			picture = loadImage("src/slime.png");
+			picture = drawer.loadImage("src/slime.png");
 		}
 	}
 	
