@@ -87,6 +87,5 @@ public class Player extends Rectangle2D.Double{
 		}
 	}
 
->>>>>>> d1acf2ecce31eee69b50ecb7b454aea933a7863c
 
 }

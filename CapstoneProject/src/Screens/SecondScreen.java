@@ -69,7 +69,8 @@ public class SecondScreen extends Screen {
 		d1.drawDisaster(surface); 
 		d2.drawDisaster(surface); 
 		d3.drawDisaster(surface);
-
+		player.draw(surface); 
+		
 	}
 
 	public void mousePressed() {
