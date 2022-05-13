@@ -2,6 +2,8 @@ package Screens;
 
 
 
+import java.awt.Desktop.Action;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.event.*;
@@ -10,13 +12,19 @@ import java.util.List;
 
 import Core.DrawingSurface;
 import game.Ingredients;
+<<<<<<< HEAD
+import game.Player;
+=======
+>>>>>>> cf8eda0c876c64233e475ecb73df1608d7977a26
 
 
 
 public class SecondScreen extends Screen {
 	
 	private DrawingSurface surface;
-	private boolean[][] grid; 
+	private Object[][] grid; 
+	private Rectangle button;
+
 	
 	public SecondScreen(DrawingSurface surface) {
 		super(800,600);
@@ -38,15 +46,32 @@ public class SecondScreen extends Screen {
 	// line is executed again.
 	public void draw() {
 		surface.background(0,255,255);   
+		grid = new Character[20][20]; 
 		
-		grid = new boolean[20][20]; 
-		
-		Ingredients a = new Ingredients(1, 0, 0); 
-		
-		grid[0][0] = a != null; 
+		Object a = new Ingredients("Onions", 19, 10); 
 		
 
 	}
 
+	public void mousePressed() {
+		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX,surface.mouseY));
+		if (button.contains(p))
+			surface.switchScreen(ScreenSwitcher.GAME_SCREEN);
+	}
+ 
+	public void getIngredients(Ingredients a1) { 
+		grid[a1.getX()][a1.getY()] = a1; 
+	}
+	
+	public void getPlayer (Player a2) { 
+		
+		
+	}
+	
+	public void getOrders () { 
+		
+		
+	}
+	
 	
 }
