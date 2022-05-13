@@ -19,6 +19,7 @@ import game.Interactions;
 import game.Orders;
 import game.Player;
 import processing.core.PApplet;
+import processing.core.PImage;
 
 
 
@@ -48,9 +49,16 @@ public class SecondScreen extends Screen {
 	// The statements in the setup() function 
 	// execute once when the program begins
 	public void setup() {
+		counter = new Counter(order, 10, 10);
+		d1 = new Disaster ("Fire", 1, 10); 
+		d2 = new Disaster ("Flood", 2, 10 ); 
+		d3 = new Disaster ("Blackout", 3,10); 
+		hole = new Hole (5, 7); 
+		ingredients = new Ingredients(2, 9,9); 
+		order = new Orders(); 
+		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
 		
 		
-
 	}
 
 	// The statements in draw() are executed until the 
@@ -62,7 +70,7 @@ public class SecondScreen extends Screen {
 		grid = new Character[20][20]; 
 		
 
-		counter.draw(surface,10,10); 
+		counter.draw(surface,5,5); 
 		hole.draw(surface, 5, 5); 
 		ingredients.draw(surface, ingredients.getX(), ingredients.getY()); 
 		order.draw(surface,5); 
