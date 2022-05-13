@@ -57,7 +57,23 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	public void draw(PApplet drawer) {
 		
 		drawer.image(picture, x, y);
-		
+		drawer.rect(x,  y,  50,  50);
+		String food = new String();
+		if(name == 1) {
+			food = "onion";
+		} else if (name == 2) {
+			food = "squirrel";
+		} else if (name == 3) {
+			food = "tomato";
+		} else if (name == 4) {
+			food = "rabbit";
+		} else if (name == 5) {
+			food = "cheese";
+		} else if (name == 6) {
+			food = "slime";
+		}
+		drawer.text(food, x, y);
+		drawer.stroke(0);
 	}
 	
 	/**
@@ -110,6 +126,24 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	 */
 	public int getY() {
 		return y;
+	}
+	
+	public String getName() {
+		String food = "";
+		if(name == 1) {
+			food = "onion";
+		} else if (name == 2) {
+			food = "squirrel";
+		} else if (name == 3) {
+			food = "tomato";
+		} else if (name == 4) {
+			food = "rabbit";
+		} else if (name == 5) {
+			food = "cheese";
+		} else if (name == 6) {
+			food = "slime";
+		}
+		return food;
 	}
 	
 }
