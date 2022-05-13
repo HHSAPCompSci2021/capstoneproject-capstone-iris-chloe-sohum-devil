@@ -15,12 +15,16 @@ import game.Counter;
 import game.Disaster;
 import game.Hole;
 import game.Ingredients;
+<<<<<<< HEAD
 import game.Interactions;
 import game.Orders;
 import game.Player;
 import processing.core.PApplet;
 
 
+=======
+import game.Player;
+>>>>>>> 808c15fd38940fce909eb66951a867ea812c1edf
 
 public class SecondScreen extends Screen {
 	

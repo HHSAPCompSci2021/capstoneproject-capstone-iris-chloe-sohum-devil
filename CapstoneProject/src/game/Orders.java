@@ -8,7 +8,7 @@ import Core.DrawingSurface;
   * The order class will be used to create an order, randomizing between the possible ingredients
   * 
   * @author cpoon870 & Iris Chou
-  * @version 05/12/2022
+  * @version 05/13/2022
   */
 public class Orders extends DrawingSurface implements Interactions{
 
@@ -22,7 +22,7 @@ public class Orders extends DrawingSurface implements Interactions{
 	public Orders() {
 		orderNum = (int)(Math.random() * 4) + 1;
 		for(int i = 0; i < orderNum; i ++) {
-			ingredientsList.add(new Ingredients((int)(Math.random() * 5) + 1, 200, 200));
+			ingredientsList.add(new Ingredients((int)(Math.random() * 6) + 1, 200, 200));
 		}
 	}
 	
@@ -44,6 +44,11 @@ public class Orders extends DrawingSurface implements Interactions{
 		for(int i = 0; i < ingredientsList.size(); i++) {
 			ingredientsList.get(i).draw(drawer, x + 5 + (width - 10) / 2 * (i % 2), 5 + height / 2 * (i / 2));
 		}
+		String order = "";
+		for(Ingredients e: ingredientsList) {
+			order = order + e.getName();
+		}
+		drawer.text(order,  (float)(width-10),  (float)height);
 	}
 	
 	/**

@@ -1,5 +1,7 @@
 package game;
 
+import processing.core.PApplet;
+
 /**
  * A disaster in the game that the player has to account for and fix in a set amount of time.
  * Each type of disaster has its own unique fix.
@@ -64,6 +66,43 @@ public class Disaster {
 	 */
 	public String getImage() {
 		return picture;
+	}
+	
+	/**
+	 * Draws the disaster resolving equipment to the screen
+	 * 
+	 * @param drawer PApplet for the disaster resolving equipment to be drawn on
+	 * @param width the width of the grids
+	 * @param height the height of the grids
+	 */
+	public void drawEquipment(PApplet drawer, double width, double height) {
+		drawer.image(drawer.loadImage("src/" + picture), (float)width*x, (float)height*y, (float)width, (float)height);
+	}
+	
+	/**
+	 * Draws the disaster to the screen
+	 * 
+	 * @param drawer PApplet for the disaster to be drawn on
+	 * @post drawer is set to noStroke() if the disaster is a Flood or Blackout
+	 * @post drawer fill() is set to blue (70, 95, 240) if the disaster is a Flood
+	 * @post drawer fill() is set to black if the disaster is a Blackout
+	 */
+	public void drawDisaster(PApplet drawer) {
+		switch(type) {
+		case "Fire":
+			drawer.image(drawer.loadImage("src/Fire.png"), 0, 0, drawer.width, drawer.height);
+			break;
+		case "Flood":
+			drawer.fill(70, 95, 240);
+			drawer.noStroke();
+			drawer.rect(0, 0, drawer.width, drawer.height);
+			break;
+		case "Blackout":
+			drawer.noStroke();
+			drawer.fill(0);
+			drawer.rect(0, 0, drawer.width, drawer.height);
+			break;
+		}
 	}
 	
 	/**
