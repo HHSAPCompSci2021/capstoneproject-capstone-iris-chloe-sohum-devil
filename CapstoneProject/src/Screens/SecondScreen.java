@@ -15,6 +15,8 @@ import Core.DrawingSurface;
 public class SecondScreen extends Screen {
 	
 	private DrawingSurface surface;
+	private boolean[][] grid; 
+	
 	public SecondScreen(DrawingSurface surface) {
 		super(800,600);
 		this.surface = surface;
@@ -24,6 +26,8 @@ public class SecondScreen extends Screen {
 	// The statements in the setup() function 
 	// execute once when the program begins
 	public void setup() {
+		
+		
 
 	}
 
@@ -33,6 +37,13 @@ public class SecondScreen extends Screen {
 	// line is executed again.
 	public void draw() {
 		surface.background(0,255,255);   
+		
+		grid = new boolean[20][20]; 
+		
+		Ingredients a = new Ingredients(1, 0, 0); 
+		
+		grid[0][0] = a != null; 
+		
 
 	}
 
