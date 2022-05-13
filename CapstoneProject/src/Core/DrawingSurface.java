@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 import Screens.FirstScreen;
 import Screens.Screen;
+import Screens.ScreenSwitcher;
 import Screens.SecondScreen;
 import processing.core.PApplet;
 
-public class DrawingSurface extends PApplet{
+public class DrawingSurface extends PApplet implements ScreenSwitcher{
 	
 public float ratioX, ratioY;
 	
