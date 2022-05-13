@@ -20,6 +20,7 @@ public class Orders extends DrawingSurface implements Interactions{
 	 * random adds ingredients to the order
 	 */
 	public Orders() {
+		ingredientsList = new ArrayList<Ingredients>();
 		orderNum = (int)(Math.random() * 4) + 1;
 		for(int i = 0; i < orderNum; i ++) {
 			ingredientsList.add(new Ingredients((int)(Math.random() * 6) + 1, 200, 200));
