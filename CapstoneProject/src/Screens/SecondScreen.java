@@ -1,6 +1,11 @@
 package Screens;
 
-
+/**
+ * game screen with the grid 
+ * 
+ * @author sphadke983
+ * @version 5/13/2022
+ */
 
 import java.awt.Desktop.Action;
 import java.awt.Point;
@@ -22,7 +27,6 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 
-
 public class SecondScreen extends Screen {
 	
 	private DrawingSurface surface;
@@ -39,6 +43,10 @@ public class SecondScreen extends Screen {
 	private Orders order; 
 	private Player player; 
 	
+	/**
+	 * Intializes the values for each of the objects in the grid 
+	 * @param surface
+	 */
 	
 	public SecondScreen(DrawingSurface surface) {
 		super(800,600);
@@ -50,10 +58,8 @@ public class SecondScreen extends Screen {
 		hole = new Hole (5, 7); 
 		ingredients = new Ingredients(2, 9,9); 
 		order = new Orders(); 
-<<<<<<< HEAD
 		player = new Player (surface.loadImage("src/Player.jpg"), 4, 4); 
 		
-=======
 		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
 
 	}
@@ -71,7 +77,6 @@ public class SecondScreen extends Screen {
 		order = new Orders(); 
 		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
 		*/ 
->>>>>>> 77dbf12bf78eb95911857fee39fe920f16043896
 		
 	}
 

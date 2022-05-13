@@ -12,7 +12,7 @@ import processing.core.PImage;
 /**
  * runs the player for the game, allows the player to move around the screen, pick up, and drop off objects
  * 
- * @author cpoon870
+ * @author cpoon870 & sphadke983 
  * @version 5/13/2022
  */
 public class Player extends Rectangle2D.Double{
@@ -46,7 +46,7 @@ public class Player extends Rectangle2D.Double{
 	 */
 	public void walk(int dir1, int dir2) {
 		x = x + (5*dir1);
-		y = y + (5*dir2);
+		y = y + (5*dir2); 
 	}
 	
 	/**
