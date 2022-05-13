@@ -79,6 +79,7 @@ public class SecondScreen extends Screen {
 <<<<<<< HEAD
 		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
 		*/ 
+		
 		player = new Player (surface.loadImage("img/Player.jpg"), 4, 4); 
 		
 		counter = new Counter(order, 10, 10);
