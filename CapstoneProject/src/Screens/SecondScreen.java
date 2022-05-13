@@ -15,16 +15,12 @@ import game.Counter;
 import game.Disaster;
 import game.Hole;
 import game.Ingredients;
-<<<<<<< HEAD
 import game.Interactions;
 import game.Orders;
 import game.Player;
 import processing.core.PApplet;
 
 
-=======
-import game.Player;
->>>>>>> 808c15fd38940fce909eb66951a867ea812c1edf
 
 public class SecondScreen extends Screen {
 	
@@ -65,16 +61,16 @@ public class SecondScreen extends Screen {
 		surface.background(0,255,255);   
 		grid = new Character[20][20]; 
 		
-		counter - 
-		disaster - 
-		hole - 
-		ingredients.draw(surface, ingredients.getX(), ingredients.getY())); 
-		order.draw(surface,5); 
-		
-		interactions - 
-		player - 
-	
 
+		counter.draw(surface,10,10); 
+		hole.draw(surface, 5, 5); 
+		ingredients.draw(surface, ingredients.getX(), ingredients.getY()); 
+		order.draw(surface,5); 
+		d1.drawDisaster(surface); 
+		d2.drawDisaster(surface); 
+		d3.drawDisaster(surface);
+		player.draw(surface); 
+		
 	}
 
 	public void mousePressed() {
