@@ -43,6 +43,7 @@ public class SecondScreen extends Screen {
 	public SecondScreen(DrawingSurface surface) {
 		super(800,600);
 		this.surface = surface;
+<<<<<<< HEAD
 	/*	counter = new Counter(order, 10, 10);
 		d1 = new Disaster ("Fire", 1, 10); 
 		d2 = new Disaster ("Flood", 2, 10 ); 
@@ -52,6 +53,10 @@ public class SecondScreen extends Screen {
 		order = new Orders(); 
 		player = new Player (surface.loadImage("src/Player.jpg"), 4, 4); 
 */
+=======
+
+
+>>>>>>> 860f30c7aa5a11338c4c14ecb391c50a5716e5e8
 	}
 
 	// The statements in the setup() function 
@@ -66,8 +71,21 @@ public class SecondScreen extends Screen {
 		ingredients = new Ingredients(2, 9,9);
 		
 		order = new Orders(); 
+<<<<<<< HEAD
 		player = new Player (surface.loadImage("img/Player.jpg"), 4, 4); 
 	
+=======
+		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
+		*/ 
+		counter = new Counter(order, 10, 10);
+		d1 = new Disaster ("Fire", 1, 10); 
+		d2 = new Disaster ("Flood", 2, 10 ); 
+		d3 = new Disaster ("Blackout", 3,10); 
+		hole = new Hole (5, 7); 
+		ingredients = new Ingredients(surface, 2, 9,9); 
+		order = new Orders(surface); 
+		player = new Player (surface.loadImage("src/Player.jpg"), 4, 4); 
+>>>>>>> 860f30c7aa5a11338c4c14ecb391c50a5716e5e8
 		
 	}
 
@@ -76,16 +94,18 @@ public class SecondScreen extends Screen {
 	// sequence and after the last line is read, the first 
 	// line is executed again.
 	public void draw() {
-		surface.background(0,255,255);   
-		grid = new Character[20][20]; 
-		counter.draw(surface,5,5); 
-		hole.draw(surface, 7, 5); 
-		ingredients.draw(surface, ingredients.getX(), ingredients.getY()); 
-		order.draw(surface,5); 
-		d1.drawDisaster(surface); 
-		d2.drawDisaster(surface); 
-		d3.drawDisaster(surface);
-		player.draw(surface); 
+		surface.fill(255);
+		surface.rect(0, 0, surface.width, surface.height);
+//		surface.background(0,255,255);   
+//		grid = new Character[20][20]; 
+//		counter.draw(surface,5,5); 
+//		hole.draw(surface, 7, 5); 
+//		ingredients.draw(surface, ingredients.getX(), ingredients.getY()); 
+//		order.draw(surface,5); 
+//		d1.drawDisaster(surface); 
+//		d2.drawDisaster(surface); 
+//		d3.drawDisaster(surface);
+//		player.draw(surface); 
 		
 	}
 

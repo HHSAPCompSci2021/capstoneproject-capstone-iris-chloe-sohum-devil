@@ -43,7 +43,7 @@ public float ratioX, ratioY;
 	}
 	
 	/**
-	 * the steup for the drawing surface
+	 * the setup for the drawing surface
 	 * loads the screens
 	 */
 	public void setup() {

@@ -19,11 +19,11 @@ public class Orders implements Interactions{
 	 * creates a new order with a random amount of ingredients needed, from 1 to 4 ingredients
 	 * random adds ingredients to the order
 	 */
-	public Orders() {
+	public Orders(PApplet drawer) {
 		ingredientsList = new ArrayList<Ingredients>();
 		orderNum = (int)(Math.random() * 4) + 1;
 		for(int i = 0; i < orderNum; i ++) {
-			ingredientsList.add(new Ingredients((int)(Math.random() * 6) + 1, 200, 200));
+			ingredientsList.add(new Ingredients(drawer, (int)(Math.random() * 6) + 1, 200, 200));
 		}
 	}
 	
