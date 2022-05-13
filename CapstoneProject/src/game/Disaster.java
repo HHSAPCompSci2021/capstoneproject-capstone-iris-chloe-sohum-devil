@@ -1,5 +1,6 @@
 package game;
 
+import java.time.*;
 import processing.core.PApplet;
 
 /**
@@ -7,7 +8,7 @@ import processing.core.PApplet;
  * Each type of disaster has its own unique fix.
  * 
  * @author Iris Chou
- * @version 5/6/2022
+ * @version 5/13/2022
  */
 
 public class Disaster {
@@ -16,6 +17,7 @@ public class Disaster {
 	private String picture;
 	private int x;
 	private int y;
+	private LocalTime time;
 	
 	/**
 	 * Constructor that takes in a String to identify the disaster's type
@@ -39,6 +41,7 @@ public class Disaster {
 		resolved = false;
 		x = xcord;
 		y = ycord;
+		time = LocalTime.now();
 	}
 	
 	/**
@@ -47,6 +50,9 @@ public class Disaster {
 	 * @return returns true if disaster is resolved, false otherwise
 	 */
 	public boolean isResolved() {
+		if((LocalTime.now().toSecondOfDay() - time.toSecondOfDay()) > 10) {
+			resolved = false;
+		}
 		return resolved;
 	}
 	
@@ -77,6 +83,14 @@ public class Disaster {
 	 */
 	public void drawEquipment(PApplet drawer, double width, double height) {
 		drawer.image(drawer.loadImage("src/" + picture), (float)width*x, (float)height*y, (float)width, (float)height);
+	}
+	
+	/**
+	 * Resets the disaster by changing the timer by to 0 and resolves the disaster
+	 */
+	public void reset() {
+		time = LocalTime.now();
+		disasterResolved();
 	}
 	
 	/**
