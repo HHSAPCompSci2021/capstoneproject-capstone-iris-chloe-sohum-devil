@@ -50,11 +50,7 @@ public class SecondScreen extends Screen {
 		hole = new Hole (5, 7); 
 		ingredients = new Ingredients(2, 9,9); 
 		order = new Orders(); 
-<<<<<<< HEAD
 		player = new Player (surface.loadImage("src/Player.jpg"), 4, 4); 
-		
-=======
-		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
 
 	}
 
@@ -71,7 +67,6 @@ public class SecondScreen extends Screen {
 		order = new Orders(); 
 		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
 		*/ 
->>>>>>> 77dbf12bf78eb95911857fee39fe920f16043896
 		
 	}
 
