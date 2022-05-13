@@ -82,7 +82,7 @@ public class Disaster {
 	 * @param height the height of the grids
 	 */
 	public void drawEquipment(PApplet drawer, double width, double height) {
-		drawer.image(drawer.loadImage("src/" + picture), (float)width*x, (float)height*y, (float)width, (float)height);
+		drawer.image(drawer.loadImage("img/" + picture), (float)width*x, (float)height*y, (float)width, (float)height);
 	}
 	
 	/**
@@ -104,7 +104,7 @@ public class Disaster {
 	public void drawDisaster(PApplet drawer) {
 		switch(type) {
 		case "Fire":
-			drawer.image(drawer.loadImage("src/Fire.png"), 0, 0, drawer.width, drawer.height);
+			drawer.image(drawer.loadImage("img/Fire.png"), 0, 0, drawer.width, drawer.height);
 			break;
 		case "Flood":
 			drawer.fill(70, 95, 240);

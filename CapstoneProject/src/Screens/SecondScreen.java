@@ -86,23 +86,23 @@ public class SecondScreen extends Screen {
 	public void draw() {
 		surface.fill(255);
 		surface.rect(0, 0, surface.width, surface.height);
-//		surface.background(0,255,255);   
-//		grid = new Character[20][20]; 
-//		counter.draw(surface,5,5); 
-//		hole.draw(surface, 7, 5); 
-//		ingredients.draw(surface, ingredients.getX(), ingredients.getY()); 
-//		order.draw(surface,5); 
-//		d1.drawDisaster(surface); 
-//		d2.drawDisaster(surface); 
-//		d3.drawDisaster(surface);
-//		player.draw(surface); 
+		surface.background(0,255,255);   
+		grid = new Character[20][20]; 
+		counter.draw(surface,5,5); 
+		hole.draw(surface, 7, 5); 
+		ingredients.draw(surface, ingredients.getX(), ingredients.getY()); 
+		order.draw(surface,5); 
+		d1.drawDisaster(surface); 
+		d2.drawDisaster(surface); 
+		d3.drawDisaster(surface);
+		player.draw(surface); 
 		
 	}
 
 	public void mousePressed() {
-		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX,surface.mouseY));
-		if (button.contains(p))
-			surface.switchScreen(ScreenSwitcher.GAME_SCREEN);
+//		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX,surface.mouseY));
+//		if (button.contains(p))
+//			surface.switchScreen(ScreenSwitcher.GAME_SCREEN);
 	}
  
 	
