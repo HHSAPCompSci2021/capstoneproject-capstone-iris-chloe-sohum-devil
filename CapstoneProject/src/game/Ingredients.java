@@ -12,8 +12,9 @@ import processing.core.PImage;
  * @author cpoon870 & Iris Chou
  * @version 5/13/2022
  */
-public class Ingredients extends DrawingSurface implements Interactions{
+public class Ingredients implements Interactions{
 
+	private DrawingSurface surface;
 	private PImage picture;
 	private int name;
 	private int x;
@@ -27,25 +28,22 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	 * @param x the x coordinate of the ingredient
 	 * @param y the y coordinate of the ingredient
 	 */
-	public Ingredients(int name, int x, int y) {
+	public Ingredients(PApplet drawer, int name, int x, int y) {
 		this.name = name;
 		this.x = x;
 		this.y = y;
-	}
-	
-	public void setup() {
 		if(name == 1) {
-			picture = loadImage("src/onion.jpg");
+			picture = surface.loadImage("img/onion.jpg");
 		} else if (name == 2) {
-			picture = loadImage("src/squirrel.jpg");
+			picture = surface.loadImage("img/squirrel.jpg");
 		} else if (name == 3) {
-			picture = loadImage("src/tomato.png");
+			picture = surface.loadImage("img/tomato.png");
 		} else if (name == 4) {
-			picture = loadImage("src/rabbit.png");
+			picture = surface.loadImage("img/rabbit.png");
 		} else if (name == 5) {
-			picture = loadImage("src/cheese.jpg");
+			picture = surface.loadImage("img/cheese.jpg");
 		} else if (name == 6) {
-			picture = loadImage("src/slime.png");
+			picture = surface.loadImage("img/slime.png");
 		}
 	}
 	
@@ -56,7 +54,14 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	 */
 	public void draw(PApplet drawer) {
 		
-		drawer.image(picture, x, y);
+//		if (image != null)
+//			g.image(image,(float)x,(float)y,(float)width,(float)height);
+//		else {
+//			g.fill(100);
+//			g.rect((float)x,(float)y,(float)width,(float)height);
+//		}
+
+//		drawer.image(picture, x, y);
 		drawer.rect(x,  y,  50,  50);
 		String food = new String();
 		if(name == 1) {
