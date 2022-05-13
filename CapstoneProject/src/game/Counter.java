@@ -9,12 +9,17 @@ package game;
 public class Counter {
 
 	private Orders holding;
+	private static final String IMAGE = "Counter.png";
+	private int x;
+	private int y;
 	
 	/**
 	 * No argument constructor for the counter
 	 */
-	public Counter() {
+	public Counter(int xcord, int ycord) {
 		holding = null;
+		x = xcord;
+		y = ycord;
 	}
 	
 	/**
@@ -22,8 +27,10 @@ public class Counter {
 	 * 
 	 * @param order the dish that should be placed on the counter
 	 */
-	public Counter(Orders order) {
+	public Counter(Orders order, int xcord, int ycord) {
 		holding = order;
+		x = xcord;
+		y = ycord;
 	}
 	
 	/**
@@ -51,5 +58,32 @@ public class Counter {
 		Orders temp = holding;
 		holding = null;
 		return temp;
+	}
+	
+	/**
+	 * Gets a String containing the image file name for the Counter
+	 * 
+	 * @return String with the Counter's image file name
+	 */
+	public String getImage() {
+		return IMAGE;
+	}
+	
+	/**
+	 * Gets the x-coordinate of the counter
+	 * 
+	 * @return x-coordinate of counter
+	 */
+	public int getX() {
+		return x;
+	}
+	
+	/**
+	 * Gets the y-coordinate of the counter
+	 * 
+	 * @return y-coordinate of counter
+	 */
+	public int getY() {
+		return y;
 	}
 }

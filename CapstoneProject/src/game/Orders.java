@@ -6,8 +6,8 @@ import Core.DrawingSurface;
 /**
   * The order class will be used to create an order, randomizing between the possible ingredients
   * 
-  * @author cpoon870
-  * @version 05/10/2022
+  * @author cpoon870 & Iris Chou
+  * @version 05/12/2022
   */
 public class Orders extends DrawingSurface implements Interactions{
 
@@ -38,14 +38,14 @@ public class Orders extends DrawingSurface implements Interactions{
 	 * @return true if an order has been completed
 	 */
 	public boolean completed() {
-		Hole hole = new Hole();
+		//Hole hole = new Hole();
 		boolean complete = true;
-		ArrayList<Ingredients> holeContents = Hole.drop();
-		for(int i = 0; i < ingredientsList.size(); i ++) {
-			if(!holeContents.contains(ingredientsList.get(i))) {
-				complete = false;
-			}
-		}
+//		ArrayList<Ingredients> holeContents = Hole.drop();
+//		for(int i = 0; i < ingredientsList.size(); i ++) {
+//			if(!holeContents.contains(ingredientsList.get(i))) {
+//				complete = false;
+//			}
+//		}
 		
 		return complete;
 	}

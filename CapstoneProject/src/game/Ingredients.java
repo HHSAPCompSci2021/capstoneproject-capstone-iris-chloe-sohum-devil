@@ -10,7 +10,7 @@ import processing.core.PImage;
  * The ingredients are: onion, squirrel, rotten tomato, rabbit, smelly cheese, radioactive slime
  * 
  * @author cpoon870 & Iris Chou
- * @version 5/11/2022
+ * @version 5/12/2022
  */
 public class Ingredients extends DrawingSurface implements Interactions{
 
@@ -78,6 +78,24 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	@Override
 	public boolean loseLife() {
 		return false;
+	}
+	
+	/**
+	 * Gets the x-coordinate of the ingredient
+	 * 
+	 * @return x-coordinate of ingredient
+	 */
+	public int getX() {
+		return x;
+	}
+	
+	/**
+	 * Gets the y-coordinate of the ingredient
+	 * 
+	 * @return y-coordinate of ingredient
+	 */
+	public int getY() {
+		return y;
 	}
 	
 }

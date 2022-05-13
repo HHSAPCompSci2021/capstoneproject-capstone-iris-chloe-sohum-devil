@@ -12,6 +12,8 @@ public class Disaster {
 	private String type;
 	private boolean resolved;
 	private String picture;
+	private int x;
+	private int y;
 	
 	/**
 	 * Constructor that takes in a String to identify the disaster's type
@@ -19,7 +21,7 @@ public class Disaster {
 	 * @param s String of the disaster type, where capitalization matters ("Fire", "Flood", "Blackout")
 	 * @throws IllegalArgumentException
 	 */
-	public Disaster(String s) throws IllegalArgumentException{
+	public Disaster(String s, int xcord, int ycord) throws IllegalArgumentException{
 		if (!s.equals("Fire") && !s.equals("Flood") && !s.equals("Blackout"))
 			throw new IllegalArgumentException();
 		type = s;
@@ -33,6 +35,8 @@ public class Disaster {
 			picture = "Lightswitch.png";
 		}
 		resolved = false;
+		x = xcord;
+		y = ycord;
 	}
 	
 	/**
@@ -60,5 +64,23 @@ public class Disaster {
 	 */
 	public String getImage() {
 		return picture;
+	}
+	
+	/**
+	 * Gets the x-coordinate of the disaster resolving equipment
+	 * 
+	 * @return x-coordinate of disaster resolving equipment
+	 */
+	public int getX() {
+		return x;
+	}
+	
+	/**
+	 * Gets the y-coordinate of the disaster resolving equipment
+	 * 
+	 * @return y-coordinate of disaster resolving equipment
+	 */
+	public int getY() {
+		return y;
 	}
 }
