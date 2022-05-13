@@ -98,9 +98,7 @@ public class SecondScreen extends Screen {
 	// sequence and after the last line is read, the first 
 	// line is executed again.
 	public void draw() {
-		surface.fill(255);
-		surface.rect(0, 0, surface.width, surface.height);
-		surface.background(0,255,255);   
+		surface.background(255);   
 		grid = new Character[20][20]; 
 		counter.draw(surface,5,5); 
 		hole.draw(surface, 7, 5); 
