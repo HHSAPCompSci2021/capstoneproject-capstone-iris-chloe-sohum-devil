@@ -14,6 +14,7 @@ import processing.core.PImage;
  */
 public class Ingredients extends DrawingSurface implements Interactions{
 
+	private DrawingSurface surface;
 	private PImage picture;
 	private int name;
 	private int x;
@@ -35,17 +36,17 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	
 	public void setup() {
 		if(name == 1) {
-			picture = loadImage("src/onion.jpg");
+			picture = surface.loadImage("src/onion.jpg");
 		} else if (name == 2) {
-			picture = loadImage("src/squirrel.jpg");
+			picture = surface.loadImage("src/squirrel.jpg");
 		} else if (name == 3) {
-			picture = loadImage("src/tomato.png");
+			picture = surface.loadImage("src/tomato.png");
 		} else if (name == 4) {
-			picture = loadImage("src/rabbit.png");
+			picture = surface.loadImage("src/rabbit.png");
 		} else if (name == 5) {
-			picture = loadImage("src/cheese.jpg");
+			picture = surface.loadImage("src/cheese.jpg");
 		} else if (name == 6) {
-			picture = loadImage("src/slime.png");
+			picture = surface.loadImage("src/slime.png");
 		}
 	}
 	
