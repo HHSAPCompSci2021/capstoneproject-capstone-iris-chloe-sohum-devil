@@ -43,12 +43,6 @@ public class SecondScreen extends Screen {
 	public SecondScreen(DrawingSurface surface) {
 		super(800,600);
 		this.surface = surface;
-
-	}
-
-	// The statements in the setup() function 
-	// execute once when the program begins
-	public void setup() {
 		counter = new Counter(order, 10, 10);
 		d1 = new Disaster ("Fire", 1, 10); 
 		d2 = new Disaster ("Flood", 2, 10 ); 
@@ -57,7 +51,22 @@ public class SecondScreen extends Screen {
 		ingredients = new Ingredients(2, 9,9); 
 		order = new Orders(); 
 		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
-		
+
+	}
+
+	// The statements in the setup() function 
+	// execute once when the program begins
+	public void setup() {
+		/*
+		counter = new Counter(order, 10, 10);
+		d1 = new Disaster ("Fire", 1, 10); 
+		d2 = new Disaster ("Flood", 2, 10 ); 
+		d3 = new Disaster ("Blackout", 3,10); 
+		hole = new Hole (5, 7); 
+		ingredients = new Ingredients(2, 9,9); 
+		order = new Orders(); 
+		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
+		*/ 
 		
 	}
 
@@ -71,7 +80,7 @@ public class SecondScreen extends Screen {
 		
 
 		counter.draw(surface,5,5); 
-		hole.draw(surface, 5, 5); 
+		hole.draw(surface, 7, 5); 
 		ingredients.draw(surface, ingredients.getX(), ingredients.getY()); 
 		order.draw(surface,5); 
 		d1.drawDisaster(surface); 
