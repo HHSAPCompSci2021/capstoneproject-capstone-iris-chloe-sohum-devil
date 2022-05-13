@@ -49,5 +49,13 @@ public class Player extends Rectangle2D.Double{
 		disaster = null;
 		holding = false;
 	}
+	
+	public int getXPosition(int x) { 
+		return x; 
+	}
+	
+	public int getYPosition(int y) { 
+		return y; 
+	}
 
 }
