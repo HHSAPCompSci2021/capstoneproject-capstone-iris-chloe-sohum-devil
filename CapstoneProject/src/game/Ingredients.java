@@ -14,6 +14,7 @@ import processing.core.PImage;
  */
 public class Ingredients implements Interactions{
 
+	private DrawingSurface surface;
 	private PImage picture;
 	private int name;
 	private int x;
