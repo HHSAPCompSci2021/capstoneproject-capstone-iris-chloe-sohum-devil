@@ -31,6 +31,9 @@ public class Ingredients extends DrawingSurface implements Interactions{
 		this.name = name;
 		this.x = x;
 		this.y = y;
+	}
+	
+	public void setup() {
 		if(name == 1) {
 			picture = loadImage("src/onion.jpg");
 		} else if (name == 2) {
