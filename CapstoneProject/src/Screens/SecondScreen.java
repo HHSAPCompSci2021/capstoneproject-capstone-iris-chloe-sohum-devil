@@ -12,12 +12,7 @@ import java.util.List;
 
 import Core.DrawingSurface;
 import game.Ingredients;
-<<<<<<< HEAD
 import game.Player;
-=======
->>>>>>> cf8eda0c876c64233e475ecb73df1608d7977a26
-
-
 
 public class SecondScreen extends Screen {
 	
