@@ -11,15 +11,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Core.DrawingSurface;
+import game.Counter;
+import game.Disaster;
+import game.Hole;
 import game.Ingredients;
+<<<<<<< HEAD
+import game.Interactions;
+import game.Orders;
 import game.Player;
+import processing.core.PApplet;
+
+
+=======
+import game.Player;
+>>>>>>> 808c15fd38940fce909eb66951a867ea812c1edf
 
 public class SecondScreen extends Screen {
 	
 	private DrawingSurface surface;
 	private Object[][] grid; 
-	private Rectangle button;
-
+	private Rectangle button; 
+	
+	private Counter counter; 
+	private Disaster d1; 
+	private Disaster d2; 
+	private Disaster d3; 
+	private Hole hole; 
+	private Ingredients ingredients; 
+	private Interactions interactions; 
+	private Orders order; 
+	private Player player; 
+	
 	
 	public SecondScreen(DrawingSurface surface) {
 		super(800,600);
@@ -43,8 +65,15 @@ public class SecondScreen extends Screen {
 		surface.background(0,255,255);   
 		grid = new Character[20][20]; 
 		
-		Object a = new Ingredients("Onions", 19, 10); 
+		counter - 
+		disaster - 
+		hole - 
+		ingredients.draw(surface, ingredients.getX(), ingredients.getY())); 
+		order.draw(surface,5); 
 		
+		interactions - 
+		player - 
+	
 
 	}
 
@@ -54,19 +83,7 @@ public class SecondScreen extends Screen {
 			surface.switchScreen(ScreenSwitcher.GAME_SCREEN);
 	}
  
-	public void getIngredients(Ingredients a1) { 
-		grid[a1.getX()][a1.getY()] = a1; 
-	}
 	
-	public void getPlayer (Player a2) { 
-		
-		
-	}
-	
-	public void getOrders () { 
-		
-		
-	}
 	
 	
 }
