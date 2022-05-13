@@ -1,6 +1,8 @@
 package game;
 import java.util.*;
 
+import processing.core.PApplet;
+
 /**
  * The hole in the ground that the player drops food through
  * 
@@ -12,6 +14,12 @@ public class Hole {
 	private int x;
 	private int y;
 	
+	/**
+	 * Constructor for the hole with a pair of xy-coordinates
+	 * 
+	 * @param xcord
+	 * @param ycord
+	 */
 	public Hole(int xcoord, int ycoord) {
 		x = xcoord;
 		y = ycoord;
@@ -20,6 +28,23 @@ public class Hole {
 	// there could be a method to check what was put into the hole, and it could return an array list of items, it could be dropped()
 	public static ArrayList<Ingredients> drop(ArrayList<Ingredients> ingredients) {
 		return ingredients;
+	}
+	
+	/**
+	 * Draws the hole to the screen
+	 * 
+	 * @param drawer PApplet for the hole to be drawn on
+	 * @param width the width of the grids
+	 * @param height the height of the grids
+	 * @post drawer is set to noStroke()
+	 * @post drawer fill() is set to black
+	 * @post drawer's ellipseMode() is set to CORNER
+	 */
+	public void draw(PApplet drawer, double width, double height) {
+		drawer.noStroke();
+		drawer.fill(0);
+		drawer.ellipseMode(drawer.CORNER);
+		drawer.ellipse((float)width*x, (float)height*y, (float)width, (float)height);
 	}
 	
 	/**

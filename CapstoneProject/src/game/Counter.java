@@ -1,4 +1,7 @@
 package game;
+
+import processing.core.PApplet;
+
 /**
  * The table that the player can place one dish on
  * 
@@ -14,7 +17,10 @@ public class Counter {
 	private int y;
 	
 	/**
-	 * No argument constructor for the counter
+	 * Constructor for the counter with a pair of xy-coordinates
+	 * 
+	 * @param xcord
+	 * @param ycord
 	 */
 	public Counter(int xcord, int ycord) {
 		holding = null;
@@ -23,9 +29,11 @@ public class Counter {
 	}
 	
 	/**
-	 * Constructor initializes itself with an order placed on it
+	 * Constructor initializes itself with a pair of xy-coordinates and an order already placed on it
 	 * 
 	 * @param order the dish that should be placed on the counter
+	 * @param xcord
+	 * @param ycord
 	 */
 	public Counter(Orders order, int xcord, int ycord) {
 		holding = order;
@@ -67,6 +75,17 @@ public class Counter {
 	 */
 	public String getImage() {
 		return IMAGE;
+	}
+	
+	/**
+	 * Draws the counter to the screen
+	 * 
+	 * @param drawer PApplet for the counter to be drawn on
+	 * @param width the width of the grids
+	 * @param height the height of the grids
+	 */
+	public void draw(PApplet drawer, double width, double height) {
+		drawer.image(drawer.loadImage("src/Counter.png"), (float)width*x, (float)height*y, (float)width, (float)height);
 	}
 	
 	/**
