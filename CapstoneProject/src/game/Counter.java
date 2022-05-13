@@ -85,7 +85,7 @@ public class Counter {
 	 * @param height the height of the grids
 	 */
 	public void draw(PApplet drawer, double width, double height) {
-		drawer.image(drawer.loadImage("src/Counter.png"), (float)width*x, (float)height*y, (float)width, (float)height);
+		drawer.image(drawer.loadImage("img/Counter.png"), (float)width*x, (float)height*y, (float)width, (float)height);
 	}
 	
 	/**

@@ -36,17 +36,17 @@ public class Ingredients implements Interactions{
 	
 	public void setup() {
 		if(name == 1) {
-			picture = surface.loadImage("src/onion.jpg");
+			picture = surface.loadImage("img/onion.jpg");
 		} else if (name == 2) {
-			picture = surface.loadImage("src/squirrel.jpg");
+			picture = surface.loadImage("img/squirrel.jpg");
 		} else if (name == 3) {
-			picture = surface.loadImage("src/tomato.png");
+			picture = surface.loadImage("img/tomato.png");
 		} else if (name == 4) {
-			picture = surface.loadImage("src/rabbit.png");
+			picture = surface.loadImage("img/rabbit.png");
 		} else if (name == 5) {
-			picture = surface.loadImage("src/cheese.jpg");
+			picture = surface.loadImage("img/cheese.jpg");
 		} else if (name == 6) {
-			picture = surface.loadImage("src/slime.png");
+			picture = surface.loadImage("img/slime.png");
 		}
 	}
 	

@@ -63,9 +63,10 @@ public class SecondScreen extends Screen {
 		d2 = new Disaster ("Flood", 2, 10 ); 
 		d3 = new Disaster ("Blackout", 3,10); 
 		hole = new Hole (5, 7); 
-		ingredients = new Ingredients(2, 9,9); 
+		ingredients = new Ingredients(2, 9,9);
+		
 		order = new Orders(); 
-		player = new Player (surface.loadImage("src/Player.jpg"), 4, 4); 
+		player = new Player (surface.loadImage("img/Player.jpg"), 4, 4); 
 	
 		
 	}
