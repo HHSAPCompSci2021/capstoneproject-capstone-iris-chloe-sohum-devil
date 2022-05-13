@@ -10,7 +10,7 @@ import processing.core.PImage;
  * The ingredients are: onion, squirrel, rotten tomato, rabbit, smelly cheese, radioactive slime
  * 
  * @author cpoon870 & Iris Chou
- * @version 5/12/2022
+ * @version 5/13/2022
  */
 public class Ingredients extends DrawingSurface implements Interactions{
 
@@ -57,7 +57,23 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	public void draw(PApplet drawer) {
 		
 		drawer.image(picture, x, y);
-		
+		drawer.rect(x,  y,  50,  50);
+		String food = new String();
+		if(name == 1) {
+			food = "onion";
+		} else if (name == 2) {
+			food = "squirrel";
+		} else if (name == 3) {
+			food = "tomato";
+		} else if (name == 4) {
+			food = "rabbit";
+		} else if (name == 5) {
+			food = "cheese";
+		} else if (name == 6) {
+			food = "slime";
+		}
+		drawer.text(food, x, y);
+		drawer.stroke(0);
 	}
 	
 	/**
@@ -110,6 +126,28 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	 */
 	public int getY() {
 		return y;
+	}
+	
+	/**
+	 * gets the type of ingredients
+	 * @return a string with the name of the ingredient
+	 */
+	public String getName() {
+		String food = "";
+		if(name == 1) {
+			food = "onion";
+		} else if (name == 2) {
+			food = "squirrel";
+		} else if (name == 3) {
+			food = "tomato";
+		} else if (name == 4) {
+			food = "rabbit";
+		} else if (name == 5) {
+			food = "cheese";
+		} else if (name == 6) {
+			food = "slime";
+		}
+		return food;
 	}
 	
 }

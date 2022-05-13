@@ -44,6 +44,11 @@ public class Orders extends DrawingSurface implements Interactions{
 		for(int i = 0; i < ingredientsList.size(); i++) {
 			ingredientsList.get(i).draw(drawer, x + 5 + (width - 10) / 2 * (i % 2), 5 + height / 2 * (i / 2));
 		}
+		String order = "";
+		for(Ingredients e: ingredientsList) {
+			order = order + e.getName();
+		}
+		drawer.text(order,  (float)(width-10),  (float)height);
 	}
 	
 	/**
@@ -94,7 +99,9 @@ public class Orders extends DrawingSurface implements Interactions{
 		return this;
 	}
 
-	@Override
+	/**
+	 * takes a life away from the player if the orders are all filled
+	 */
 	public boolean loseLife() {
 		if(filled()) {
 			return true;
