@@ -6,8 +6,15 @@ import java.util.List;
 
 import game.Disaster;
 import game.Ingredients;
+import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * runs the player for the game, allows the player to move around the screen, pick up, and drop off objects
+ * 
+ * @author cpoon870
+ * @version 5/13/2022
+ */
 public class Player extends Rectangle2D.Double{
 	
 	public static final int PLAYER_WIDTH = 40;
@@ -18,6 +25,12 @@ public class Player extends Rectangle2D.Double{
 	private ArrayList<Disaster> disaster;
 	private boolean holding;
 	
+	/**
+	 * creates a new player
+	 * @param img the image for the player
+	 * @param x the x coordinate of the player
+	 * @param y the y coordinate of the player
+	 */
 	public Player (PImage img, int x, int y) { 
 		super(x,y,PLAYER_WIDTH,PLAYER_HEIGHT);
 		image = img;
@@ -26,12 +39,20 @@ public class Player extends Rectangle2D.Double{
 		holding = false;
 	}
 
-	// METHODS
+	/**
+	 * moves the player five steps at a time
+	 * @param dir1 the x direction
+	 * @param dir2 the y direction
+	 */
 	public void walk(int dir1, int dir2) {
 		x = x + (5*dir1);
 		y = y + (5*dir2);
 	}
 	
+	/**
+	 * allows the player to pick up objects
+	 * @param stuff the list of stuff the player should pick up
+	 */
 	public void pickUp(ArrayList<Object> stuff) {
 		
 		for (Object e: stuff) {
@@ -44,18 +65,28 @@ public class Player extends Rectangle2D.Double{
 		holding = true;
 	}
 	
+	/**
+	 * allows the player to drop off items
+	 */
 	public void dropOff() {
 		ingredient = null;
 		disaster = null;
 		holding = false;
 	}
 	
-	public int getXPosition(int x) { 
-		return x; 
+	/**
+	 * draws the player onto the screen
+	 * @param g the PApplet to draw the player onto
+	 */
+	public void draw(PApplet g) {
+		if (image != null)
+			g.image(image,(float)x,(float)y,(float)width,(float)height);
+		else {
+			g.fill(100);
+			g.rect((float)x,(float)y,(float)width,(float)height);
+		}
 	}
-	
-	public int getYPosition(int y) { 
-		return y; 
-	}
+
+>>>>>>> d1acf2ecce31eee69b50ecb7b454aea933a7863c
 
 }
