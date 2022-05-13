@@ -10,7 +10,7 @@ import Core.DrawingSurface;
   * @author cpoon870 & Iris Chou
   * @version 05/13/2022
   */
-public class Orders extends DrawingSurface implements Interactions{
+public class Orders implements Interactions{
 
 	private ArrayList<Ingredients> ingredientsList;
 	private int orderNum;

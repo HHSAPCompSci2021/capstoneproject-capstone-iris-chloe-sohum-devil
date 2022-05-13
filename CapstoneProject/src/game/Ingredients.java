@@ -12,7 +12,7 @@ import processing.core.PImage;
  * @author cpoon870 & Iris Chou
  * @version 5/13/2022
  */
-public class Ingredients extends DrawingSurface implements Interactions{
+public class Ingredients implements Interactions{
 
 	private DrawingSurface surface;
 	private PImage picture;
@@ -57,7 +57,14 @@ public class Ingredients extends DrawingSurface implements Interactions{
 	 */
 	public void draw(PApplet drawer) {
 		
-		drawer.image(picture, x, y);
+//		if (image != null)
+//			g.image(image,(float)x,(float)y,(float)width,(float)height);
+//		else {
+//			g.fill(100);
+//			g.rect((float)x,(float)y,(float)width,(float)height);
+//		}
+
+//		drawer.image(picture, x, y);
 		drawer.rect(x,  y,  50,  50);
 		String food = new String();
 		if(name == 1) {
