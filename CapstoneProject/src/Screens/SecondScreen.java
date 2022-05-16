@@ -71,7 +71,7 @@ public class SecondScreen extends Screen {
 	// The statements in the setup() function 
 	// execute once when the program begins
 	public void setup() {
-		
+		//600 * 800 window?
 		counter = new Counter(10, 4);
 		d1 = new Disaster ("Fire", 1, 10); 
 		d2 = new Disaster ("Flood", 2, 10 ); 
