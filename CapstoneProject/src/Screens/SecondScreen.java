@@ -101,7 +101,7 @@ public class SecondScreen extends Screen {
 		grid = new Character[20][20];
 		counter.draw(surface, 50,50);
 		hole.draw(surface, 50, 50);
-		ingredients.draw(surface, 50, 50); 
+//		ingredients.draw(surface, 50, 50); 
 		order.draw(surface,5);
 //		d1.drawDisaster(surface); 
 //		d2.drawDisaster(surface); 
