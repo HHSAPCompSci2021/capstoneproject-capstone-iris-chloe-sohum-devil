@@ -8,6 +8,7 @@ package Screens;
  */
 
 import java.awt.Desktop.Action;
+import java.awt.Color;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Shape;
@@ -117,7 +118,30 @@ public class SecondScreen extends Screen {
 //			surface.switchScreen(ScreenSwitcher.GAME_SCREEN);
 	}
 	
-	 
+	//arrow keys are used to move the player around 
+		
+	 public void keyPressed() {
+		
+		if (surface.keyCode == surface.CODED) { 
+			
+			if(surface.keyCode == KeyEvent.VK_UP) { 
+				player.walk(0,1); 
+			}
+			else if (surface.keyCode == KeyEvent.VK_DOWN ) { 
+				player.walk(0, -1);
+			}
+			
+			else if (surface.keyCode == KeyEvent.VK_RIGHT) { 
+				player.walk(1, 0);
+			}
+			
+			else if ( surface.keyCode == KeyEvent.VK_LEFT) { 
+				player.walk(-1,0);
+			}
+			
+		}
+		
+	}
  
 	
 	
