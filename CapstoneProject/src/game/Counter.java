@@ -6,7 +6,7 @@ import processing.core.PApplet;
  * The table that the player can place one dish on
  * 
  * @author Iris Chou
- * @version 5/6/2022
+ * @version 5/15/2022
  */
 
 public class Counter {
