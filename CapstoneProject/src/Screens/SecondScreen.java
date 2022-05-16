@@ -39,7 +39,7 @@ public class SecondScreen extends Screen {
 	private Disaster d2; 
 	private Disaster d3; 
 	private Hole hole; 
-	private Ingredients ingredients; 
+	private Ingredients[] ingredients;
 	private Interactions interactions; 
 	private Orders order; 
 	private Player player; 
@@ -87,7 +87,11 @@ public class SecondScreen extends Screen {
 		d2 = new Disaster ("Flood", 2, 10 ); 
 		d3 = new Disaster ("Blackout", 3,10); 
 		hole = new Hole (5, 7); 
-		ingredients = new Ingredients(surface, 2, 9,9); 
+		ingredients = new Ingredients[6];
+		for(int i = 0; i < ingredients.length; i++) {
+			ingredients[i] = new Ingredients(surface, i, 0, i*100);
+		}
+//		ingredients = new Ingredients(surface, 2, 9,9); 
 		order = new Orders(surface); 
 		player = new Player (surface.loadImage("img/Player.jpg"), 4, 4); 
 		
@@ -103,6 +107,9 @@ public class SecondScreen extends Screen {
 		counter.draw(surface, 50,50);
 		hole.draw(surface, 50, 50);
 //		ingredients.draw(surface, 50, 50); 
+//		for(int i = 0; i < ingredients.length; i++) {
+//			ingredients[i].draw(surface, 0, i*100, 100, 100);
+//		}
 		order.draw(surface,5);
 //		d1.drawDisaster(surface); 
 //		d2.drawDisaster(surface); 
