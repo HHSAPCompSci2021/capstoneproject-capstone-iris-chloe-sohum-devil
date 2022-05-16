@@ -36,8 +36,10 @@ public class Orders implements Interactions{
 	 * @post the drawer fill() is set to white
 	 */
 	public void draw(PApplet drawer, int count) {
-		double width = drawer.width * 3.0 / 20;
-		double height = drawer.height / 5.0;
+		double width = 100;
+		double height = 100;
+//		double width = drawer.width * 3.0 / 20;
+//		double height = drawer.height / 5.0;
 		double x = width * count + 5;
 		drawer.fill(255);
 		drawer.stroke(0);
