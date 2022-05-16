@@ -79,7 +79,7 @@ public class Player extends Rectangle2D.Double{
 	 */
 	public void draw(PApplet g) {
 		if (image != null)
-			g.image(image,(float)x,(float)y,(float)width,(float)height);
+			g.image(image,(float)super.x,(float)super.y,(float)width,(float)height);
 		else {
 			g.fill(100);
 			g.rect((float)x,(float)y,(float)width,(float)height);
