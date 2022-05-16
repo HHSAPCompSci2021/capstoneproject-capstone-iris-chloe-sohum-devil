@@ -100,15 +100,15 @@ public class SecondScreen extends Screen {
 	public void draw() {
 		surface.background(0, 255, 255);
 		grid = new Character[20][20];
-		counter.draw(surface,5,5);
-		hole.draw(surface, 7, 5);
+		counter.draw(surface, 50,50);
+		hole.draw(surface, 50, 50);
 		ingredients.draw(surface, 50, 50); 
 		order.draw(surface,5);
 //		d1.drawDisaster(surface); 
 //		d2.drawDisaster(surface); 
 //		d3.drawDisaster(surface);
-//		player.draw(surface); 
-//		
+		player.draw(surface); 
+		
 	}
 
 	public void mousePressed() {
