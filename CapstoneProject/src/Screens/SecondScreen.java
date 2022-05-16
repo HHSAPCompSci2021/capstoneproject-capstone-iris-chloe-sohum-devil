@@ -125,11 +125,11 @@ public class SecondScreen extends Screen {
 	
 		if (surface.keyCode == KeyEvent.VK_UP) {
 			if (surface.keyCode == KeyEvent.VK_UP) {
-				player.walk(0, 1);
+				player.walk(0, -1);
 			}
 
 			else if (surface.keyCode == KeyEvent.VK_DOWN) {
-				player.walk(0, -1);
+				player.walk(0, 1);
 			}
 
 		else if (surface.keyCode == KeyEvent.VK_RIGHT) {
