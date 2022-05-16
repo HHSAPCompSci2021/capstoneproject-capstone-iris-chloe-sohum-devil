@@ -45,11 +45,11 @@ public class Orders implements Interactions{
 		for(int i = 0; i < ingredientsList.size(); i++) {
 			ingredientsList.get(i).draw(drawer, (int)(x + 5 + (width - 10) / 2 * (i % 2)), (int)(5 + height / 2 * (i / 2)), (width - 10)/2, height/2);
 		}
-		String order = "";
-		for(Ingredients e: ingredientsList) {
-			order = order + e.getName();
-		}
-		drawer.text(order,  (float)(width-10),  (float)height);
+//		String order = "";
+//		for(Ingredients e: ingredientsList) {
+//			order = order + e.getName();
+//		}
+//		drawer.text(order,  (float)(width-10),  (float)height);
 	}
 	
 	/**
