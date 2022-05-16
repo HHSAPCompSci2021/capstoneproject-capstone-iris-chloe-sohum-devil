@@ -94,6 +94,15 @@ public class Ingredients implements Interactions{
 		drawer.image(picture, x, y, (float)width, (float)height);
 	}
 	
+	/**
+	 * Draws the ingredient onto the screen at the given location and size (in pixels)
+	 * 
+	 * @param drawer a PApplet to draw the ingredients on
+	 * @param xLoc the x-location of the ingredient (in pixels)
+	 * @param yLoc the y-location of the ingredient (in pixels)
+	 * @param width the width of the ingredient (in pixels)
+	 * @param height the height of the ingredient (in pixels)
+	 */
 	public void draw(PApplet drawer, int xLoc, int yLoc, double width, double height) {
 		drawer.image(picture, xLoc, yLoc, (float)width, (float)height);
 	}

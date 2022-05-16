@@ -42,7 +42,7 @@ public class SecondScreen extends Screen {
 	private Hole hole; 
 	private Ingredients[] ingredients;
 	private Interactions interactions; 
-	private Orders order; 
+	private ArrayList<Orders> orders; 
 	private Player player; 
 	private int start;
 	private LocalTime end;
@@ -71,31 +71,19 @@ public class SecondScreen extends Screen {
 	// The statements in the setup() function 
 	// execute once when the program begins
 	public void setup() {
-		/*
-		counter = new Counter(order, 10, 10);
-		d1 = new Disaster ("Fire", 1, 10); 
-		d2 = new Disaster ("Flood", 2, 10 ); 
-		d3 = new Disaster ("Blackout", 3,10); 
-		hole = new Hole (5, 7); 
-		ingredients = new Ingredients(2, 9,9);
 		
-		order = new Orders(); 
-		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
-		*/ 
-		
-		player = new Player (surface.loadImage("img/Player.jpg"), 4, 4); 
-		
-		counter = new Counter(order, 10, 10);
+		counter = new Counter(10, 4);
 		d1 = new Disaster ("Fire", 1, 10); 
 		d2 = new Disaster ("Flood", 2, 10 ); 
 		d3 = new Disaster ("Blackout", 3,10); 
 		hole = new Hole (5, 7); 
 		ingredients = new Ingredients[6];
 		for(int i = 0; i < ingredients.length; i++) {
-			ingredients[i] = new Ingredients(surface, i+1, 0, i*100);
+			ingredients[i] = new Ingredients(surface, i+1, i*150, 550);
 		}
-		order = new Orders(surface); 
-		player = new Player (surface.loadImage("img/Player.jpg"), 4, 4); 
+		orders = new ArrayList<Orders>();
+		orders.add(new Orders(surface));
+		player = new Player (surface.loadImage("img/Player.jpg"), 300, 300); 
 		
 	}
 
@@ -111,7 +99,9 @@ public class SecondScreen extends Screen {
 		for(int i = 0; i < ingredients.length; i++) {
 			ingredients[i].draw(surface, 50, 50);
 		}
-		order.draw(surface,5);
+		for(int i = 0; i < orders.size(); i++) {
+			orders.get(i).draw(surface, i);
+		}
 //		d1.drawDisaster(surface); 
 //		d2.drawDisaster(surface); 
 //		d3.drawDisaster(surface);
