@@ -74,6 +74,7 @@ public float ratioX, ratioY;
 		keys.add(keyCode);
 		if (key == ESC)  // This prevents a processing program from closing on escape key
 			key = 0;
+		activeScreen.keyPressed();
 	}
 
 	/**

@@ -20,7 +20,6 @@ public class Player extends Rectangle2D.Double{
 	public static final int PLAYER_WIDTH = 40;
 	public static final int PLAYER_HEIGHT = 60;
 	private PImage image;
-	private int x, y;
 	private ArrayList<Ingredients> ingredient;
 	private ArrayList<Disaster> disaster;
 	private boolean holding;
@@ -45,8 +44,8 @@ public class Player extends Rectangle2D.Double{
 	 * @param dir2 the y direction
 	 */
 	public void walk(int dir1, int dir2) {
-		x = x + (5*dir1);
-		y = y + (5*dir2); 
+		super.x += (5*dir1);
+		super.y += (5*dir2); 
 	}
 	
 	/**

@@ -62,6 +62,13 @@ public abstract class Screen {
 		
 	}
 	
+	/**
+	 * checks if the key is pressed
+	 */
+	public void keyPressed() {
+		
+	}
+	
 	
 	
 }

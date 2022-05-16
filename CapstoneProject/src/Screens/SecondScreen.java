@@ -120,26 +120,19 @@ public class SecondScreen extends Screen {
 	//arrow keys are used to move the player around 
 		
 	 public void keyPressed() {
-		
-		if (surface.keyCode == surface.CODED) { 
-			
-			if(surface.keyCode == KeyEvent.VK_UP) { 
-				player.walk(0,1); 
-			}
-			else if (surface.keyCode == KeyEvent.VK_DOWN ) { 
+			if (surface.keyCode == KeyEvent.VK_UP) {
+				player.walk(0, 1);
+			} else if (surface.keyCode == KeyEvent.VK_DOWN) {
 				player.walk(0, -1);
 			}
-			
-			else if (surface.keyCode == KeyEvent.VK_RIGHT) { 
+
+			else if (surface.keyCode == KeyEvent.VK_RIGHT) {
 				player.walk(1, 0);
 			}
-			
-			else if ( surface.keyCode == KeyEvent.VK_LEFT) { 
-				player.walk(-1,0);
+
+			else if (surface.keyCode == KeyEvent.VK_LEFT) {
+				player.walk(-1, 0);
 			}
-			
-		}
-		
 	}
  
 	
