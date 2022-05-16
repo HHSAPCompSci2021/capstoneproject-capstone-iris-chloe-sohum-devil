@@ -83,22 +83,6 @@ public class Ingredients implements Interactions{
 		drawer.image(picture, x, y);
 	}
 	
-	public void setUp() {
-		if(name == 1) {
-			picture = surface.loadImage("img/onion.jpg");
-		} else if (name == 2) {
-			picture = surface.loadImage("img/squirrel.jpg");
-		} else if (name == 3) {
-			picture = surface.loadImage("img/tomato.png");
-		} else if (name == 4) {
-			picture = surface.loadImage("img/rabbit.png");
-		} else if (name == 5) {
-			picture = surface.loadImage("img/cheese.jpg");
-		} else if (name == 6) {
-			picture = surface.loadImage("img/slime.png");
-		}
-	}
-	
 	/**
 	 * Draws the ingredient onto the screen at the given location (in pixels)
 	 * 

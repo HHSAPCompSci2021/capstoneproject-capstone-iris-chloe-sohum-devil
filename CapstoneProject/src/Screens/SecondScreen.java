@@ -40,7 +40,7 @@ public class SecondScreen extends Screen {
 	private Disaster d2; 
 	private Disaster d3; 
 	private Hole hole; 
-	private Ingredients ingredients; 
+	private Ingredients[] ingredients;
 	private Interactions interactions; 
 	private Orders order; 
 	private Player player; 
@@ -90,7 +90,10 @@ public class SecondScreen extends Screen {
 		d2 = new Disaster ("Flood", 2, 10 ); 
 		d3 = new Disaster ("Blackout", 3,10); 
 		hole = new Hole (5, 7); 
-		ingredients = new Ingredients(surface, 2, 9,9); 
+		ingredients = new Ingredients[6];
+		for(int i = 0; i < ingredients.length; i++) {
+			ingredients[i] = new Ingredients(surface, i+1, 0, i*100);
+		}
 		order = new Orders(surface); 
 		player = new Player (surface.loadImage("img/Player.jpg"), 4, 4); 
 		
@@ -105,7 +108,9 @@ public class SecondScreen extends Screen {
 		grid = new Character[20][20];
 		counter.draw(surface, 50,50);
 		hole.draw(surface, 50, 50);
-//		ingredients.draw(surface, 50, 50); 
+		for(int i = 0; i < ingredients.length; i++) {
+			ingredients[i].draw(surface, 50, 50);
+		}
 		order.draw(surface,5);
 //		d1.drawDisaster(surface); 
 //		d2.drawDisaster(surface); 
@@ -137,24 +142,23 @@ public class SecondScreen extends Screen {
 	}
 	
 	//arrow keys are used to move the player around 
-		
-	 public void keyPressed() {
-				
-			if (surface.keyCode == KeyEvent.VK_UP) {
-				player.walk(0, -1);
-			}
+	 public void keyPressed() {					
 
-			else if (surface.keyCode == KeyEvent.VK_DOWN) {
-				player.walk(0, 1);
-			}
+		if (surface.keyCode == KeyEvent.VK_UP) {
+			player.walk(0, -1);
+		}
+
+		else if (surface.keyCode == KeyEvent.VK_DOWN) {
+			player.walk(0, 1);
+		}
 
 		else if (surface.keyCode == KeyEvent.VK_RIGHT) {
-				player.walk(1, 0);
-			}
+			player.walk(1, 0);
+		}
 
 		else if (surface.keyCode == KeyEvent.VK_LEFT) {
-				player.walk(-1, 0);
-			}
+			player.walk(-1, 0);
+		}
 	}
  
 }
