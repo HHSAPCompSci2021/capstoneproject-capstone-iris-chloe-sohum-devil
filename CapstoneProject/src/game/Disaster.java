@@ -136,4 +136,16 @@ public class Disaster {
 	public int getY() {
 		return y;
 	}
+	
+	public int getDisaster() {
+		if(type.equals("Fire")) {
+			return 1;
+		}
+		else if (type.equals("Flood")) {
+			return 2;
+		}
+		else{
+			return 3;
+		}
+	}
 }

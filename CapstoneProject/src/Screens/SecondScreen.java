@@ -13,6 +13,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.event.*;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +44,8 @@ public class SecondScreen extends Screen {
 	private Interactions interactions; 
 	private Orders order; 
 	private Player player; 
+	private int start;
+	private LocalTime end;
 	
 	/**
 	 * Intializes the values for each of the objects in the grid 
@@ -115,15 +118,28 @@ public class SecondScreen extends Screen {
 //		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX,surface.mouseY));
 //		if (button.contains(p))
 //			surface.switchScreen(ScreenSwitcher.GAME_SCREEN);
+		start = LocalTime.now().toSecondOfDay();
+	}
+	
+	public void mouseReleased() {
+		if((start - end.toSecondOfDay()) > 10) {
+			if(d1.getDisaster() == 1 || d2.getDisaster() == 1 || d3.getDisaster() == 1) {
+				surface.background(168, 50, 50);
+				player.loseLife();
+			} else if(d1.getDisaster() == 2 || d2.getDisaster() == 2 || d3.getDisaster() == 2) {
+				surface.background(50, 64, 168);
+				player.loseLife();
+			} else if(d1.getDisaster() == 3 || d2.getDisaster() == 3 || d3.getDisaster() == 3) {
+				surface.background(0);
+				player.loseLife();
+			} 
+		}
 	}
 	
 	//arrow keys are used to move the player around 
 		
 	 public void keyPressed() {
-					
-
-	
-	
+				
 			if (surface.keyCode == KeyEvent.VK_UP) {
 				player.walk(0, -1);
 			}
@@ -141,5 +157,4 @@ public class SecondScreen extends Screen {
 			}
 	}
  
-	
-	 }
+}

@@ -23,6 +23,7 @@ public class Player extends Rectangle2D.Double{
 	private ArrayList<Ingredients> ingredient;
 	private ArrayList<Disaster> disaster;
 	private boolean holding;
+	private int lives = 3;
 	
 	/**
 	 * creates a new player
@@ -86,5 +87,12 @@ public class Player extends Rectangle2D.Double{
 		}
 	}
 	
+	public void loseLife() {
+		lives = lives - 1;
+	}
+	
+	public void gainLife() {
+		lives = lives + 1;
+	}
 
 }
