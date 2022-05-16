@@ -121,9 +121,6 @@ public class SecondScreen extends Screen {
 		
 	 public void keyPressed() {
 					
-
-	
-		if (surface.keyCode == KeyEvent.VK_UP) {
 			if (surface.keyCode == KeyEvent.VK_UP) {
 				player.walk(0, -1);
 			}
@@ -141,6 +138,5 @@ public class SecondScreen extends Screen {
 			}
 	}
  
-	
 	
 }
