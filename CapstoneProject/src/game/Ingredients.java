@@ -10,7 +10,7 @@ import processing.core.PImage;
  * The ingredients are: onion, squirrel, rotten tomato, rabbit, smelly cheese, radioactive slime
  * 
  * @author cpoon870 & Iris Chou
- * @version 5/13/2022
+ * @version 5/15/2022
  */
 public class Ingredients implements Interactions{
 

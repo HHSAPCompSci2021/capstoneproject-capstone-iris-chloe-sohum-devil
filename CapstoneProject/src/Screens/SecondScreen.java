@@ -76,7 +76,6 @@ public class SecondScreen extends Screen {
 		ingredients = new Ingredients(2, 9,9);
 		
 		order = new Orders(); 
-<<<<<<< HEAD
 		player = new Player (surface.loadImage("src/Player.png"), 4, 4); 
 		*/ 
 		

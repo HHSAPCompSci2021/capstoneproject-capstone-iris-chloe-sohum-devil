@@ -7,7 +7,7 @@ import processing.core.PApplet;
  * The hole in the ground that the player drops food through
  * 
  * @author Iris Chou
- * @version 5/11/2022
+ * @version 5/15/2022
  */
 public class Hole {
 	
