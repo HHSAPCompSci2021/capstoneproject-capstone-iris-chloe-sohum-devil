@@ -61,34 +61,36 @@ public class Ingredients implements Interactions{
 //		}
 
 //		drawer.image(picture, x, y);
-		drawer.rect(x,  y,  50,  50);
-		String food = new String();
-		if(name == 1) {
-			food = "onion";
-		} else if (name == 2) {
-			food = "squirrel";
-		} else if (name == 3) {
-			food = "tomato";
-		} else if (name == 4) {
-			food = "rabbit";
-		} else if (name == 5) {
-			food = "cheese";
-		} else if (name == 6) {
-			food = "slime";
-		}
-		drawer.text(food, x, y);
-		drawer.stroke(0);
+//		drawer.rect(x,  y,  50,  50);
+//		String food = new String();
+//		if(name == 1) {
+//			food = "onion";
+//		} else if (name == 2) {
+//			food = "squirrel";
+//		} else if (name == 3) {
+//			food = "tomato";
+//		} else if (name == 4) {
+//			food = "rabbit";
+//		} else if (name == 5) {
+//			food = "cheese";
+//		} else if (name == 6) {
+//			food = "slime";
+//		}
+//		drawer.text(food, x, y);
+//		drawer.stroke(0);
+		
+		drawer.image(picture, x, y);
 	}
 	
 	/**
 	 * Draws the ingredient onto the screen at the given location (in pixels)
 	 * 
 	 * @param drawer a PApplet to draw the ingredients on
-	 * @param xLoc the x-location for the ingredient to be drawn at
-	 * @param xLoc the y-location for the ingredient to be drawn at
+	 * @param width the width of the ingredient (in pixels)
+	 * @param height the height of the ingredient (in pixels)
 	 */
-	public void draw(PApplet drawer, double xLoc, double yLoc) {
-		drawer.image(picture, (int)xLoc, (int)yLoc);
+	public void draw(PApplet drawer, double width, double height) {
+		drawer.image(picture, x, y, (float)width, (float)height);
 	}
 
 	@Override
