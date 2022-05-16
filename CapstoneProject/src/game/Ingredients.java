@@ -92,6 +92,10 @@ public class Ingredients implements Interactions{
 	public void draw(PApplet drawer, double width, double height) {
 		drawer.image(picture, x, y, (float)width, (float)height);
 	}
+	
+	public void draw(PApplet drawer, int xLoc, int yLoc, double width, double height) {
+		drawer.image(picture, xLoc, yLoc, (float)width, (float)height);
+	}
 
 	@Override
 	/**

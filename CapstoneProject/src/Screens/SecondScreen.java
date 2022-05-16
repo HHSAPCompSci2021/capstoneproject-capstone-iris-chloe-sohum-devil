@@ -98,12 +98,12 @@ public class SecondScreen extends Screen {
 	// sequence and after the last line is read, the first 
 	// line is executed again.
 	public void draw() {
-		surface.background(255);
+		surface.background(0, 255, 255);
 		grid = new Character[20][20];
 		counter.draw(surface,5,5);
 		hole.draw(surface, 7, 5);
 		ingredients.draw(surface, 50, 50); 
-//		order.draw(surface,5);
+		order.draw(surface,5);
 //		d1.drawDisaster(surface); 
 //		d2.drawDisaster(surface); 
 //		d3.drawDisaster(surface);
