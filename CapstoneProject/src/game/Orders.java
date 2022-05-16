@@ -8,7 +8,7 @@ import Core.DrawingSurface;
   * The order class will be used to create an order, randomizing between the possible ingredients
   * 
   * @author cpoon870 & Iris Chou
-  * @version 05/13/2022
+  * @version 05/15/2022
   */
 public class Orders implements Interactions{
 
@@ -36,14 +36,16 @@ public class Orders implements Interactions{
 	 * @post the drawer fill() is set to white
 	 */
 	public void draw(PApplet drawer, int count) {
-		double width = drawer.width * 3.0 / 20;
-		double height = drawer.height / 5.0;
+		double width = 100;
+		double height = 100;
+//		double width = drawer.width * 3.0 / 20;
+//		double height = drawer.height / 5.0;
 		double x = width * count + 5;
 		drawer.fill(255);
 		drawer.stroke(0);
 		drawer.rect((float)x, 0, (float)(width - 10), (float)height);
 		for(int i = 0; i < ingredientsList.size(); i++) {
-			ingredientsList.get(i).draw(drawer, (int)(x + 5 + (width - 10) / 2 * (i % 2)), (int)(5 + height / 2 * (i / 2)), (width - 10)/2, (height-10)/2);
+			ingredientsList.get(i).draw(drawer, (int)(x + 5 + (width - 20) / 2 * (i % 2)), (int)(height / 2 * (i / 2)), (width - 20)/2, (height-10)/2);
 		}
 //		String order = "";
 //		for(Ingredients e: ingredientsList) {
