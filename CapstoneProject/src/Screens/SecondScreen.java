@@ -196,7 +196,7 @@ public class SecondScreen extends Screen {
 	 
 	 public void endGame() {
 	//	 if(player.getLives() < 0) {
-			 
+			 int c = surface.transferPoints(player.getCurrency());
 			 surface.switchScreen(ScreenSwitcher.END_SCREEN);
 	//	 }
 	 }
