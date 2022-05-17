@@ -110,8 +110,8 @@ public class Player extends Rectangle2D.Double{
 		return y; 
 	}
 	
-	public void addCurrency(int value) {
-		currency++;
+	public void addCurrency() {
+		currency = currency + 10;
 	}
 	
 	public int getCurrency() {
