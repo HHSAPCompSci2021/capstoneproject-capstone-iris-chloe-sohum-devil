@@ -150,5 +150,13 @@ public class SecondScreen extends Screen {
 			player.walk(-1, 0);
 		}
 	}
+	 
+	 public void grabAction(Ingredients a) { 
+			
+			if ( Math.abs(x - a.getX()) < 10) { 
+				
+			}
+			
+		}
  
 }
