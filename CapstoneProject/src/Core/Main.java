@@ -38,10 +38,14 @@ public class Main {
 		window.setVisible(true);
 		canvas.requestFocus();
 		
+		String filepath = "c:\\GitHub\\CapstoneProject\\Volume Beta 08.Biome Fest.mp3"; 
 		
+		Music musicObject = new Music(); 
+		musicObject.playMusic(filepath);
 
 	}
 	
+
 	
 
 }

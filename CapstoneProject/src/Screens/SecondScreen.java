@@ -151,6 +151,10 @@ public class SecondScreen extends Screen {
 
 		else if (surface.keyCode == KeyEvent.VK_LEFT) {
 			player.walk(-1, 0);
+		} else if (surface.keyCode == KeyEvent.VK_SPACE) {
+			for(Ingredients e: ingredients) {
+				grabAction(e);
+			}
 		}
 		endGame();
 	}
