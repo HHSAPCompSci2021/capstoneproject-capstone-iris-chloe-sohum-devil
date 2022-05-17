@@ -117,7 +117,7 @@ public class SecondScreen extends Screen {
 	}
 	
 	public void mouseReleased() {
-		if((start - end.toSecondOfDay()) > 10) {
+		if((start - LocalTime.now().toSecondOfDay()) > 10) {
 			if(d1.getDisaster() == 1 || d2.getDisaster() == 1 || d3.getDisaster() == 1) {
 				surface.background(168, 50, 50);
 				player.loseLife();
