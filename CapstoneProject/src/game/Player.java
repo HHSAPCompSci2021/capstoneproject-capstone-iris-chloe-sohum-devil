@@ -55,16 +55,18 @@ public class Player extends Rectangle2D.Double{
 	 * allows the player to pick up objects
 	 * @param stuff the list of stuff the player should pick up
 	 */
-	public void pickUp(ArrayList<Object> stuff) {
+	public void pickUp(Ingredients i) {
+		ingredient.add(i);
+		System.out.println(i.getName());
 		
-		for (Object e: stuff) {
-			if(e instanceof Ingredients) {
-				ingredient.add((Ingredients)e);
-			} else if (e instanceof Disaster) {
-				disaster.add((Disaster)e);
-			}
-		}
-		holding = true;
+//		for (Object e: stuff) {
+//			if(e instanceof Ingredients) {
+//				ingredient.add((Ingredients)e);
+//			} else if (e instanceof Disaster) {
+//				disaster.add((Disaster)e);
+//			}
+//		}
+//		holding = true;
 	}
 	
 	/**

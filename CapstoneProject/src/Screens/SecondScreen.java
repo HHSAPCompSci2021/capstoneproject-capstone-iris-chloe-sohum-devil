@@ -160,27 +160,23 @@ public class SecondScreen extends Screen {
 	}
 	 
 	 public void grabAction(Ingredients a) { 
-			if(holding == null) {
-			if (surface.keyCode == KeyEvent.VK_SPACE) { 
-				if (Math.abs(player.getX() - a.getX()) < 10) { 
-					if (Math.abs(player.getY() - a.getY()) < 10) { 
-						player.pickUp(holding);
-					} 
-				}
+			if (Math.abs(player.getX() - a.getX()) < 10) { 
+				if (Math.abs(player.getY() - a.getY()) < 10) { 
+					player.pickUp(a);
+				} 
+			}
 			
-			for (int i = 0 ; i < holding.size() ; i++) { 
-				System.out.print(holding.get(i)); 
-			}
-			} else if (player.getX() - hole.getX() < 10 && player.getY() - hole.getY() < 10) {
-				holding = null;
-				player.addCurrency();
-				orders = new ArrayList<Orders>();
-				orders.add(new Orders(surface));
-			}
-			else {
-				a.draw(surface, (int)player.getX(), (int)player.getY(), 50, 50);
-			}
-	 }
+//			for (int i = 0 ; i < holding.size() ; i++) { 
+//				System.out.print(holding.get(i)); 
+//			}
+//			} else if (player.getX() - hole.getX() < 10 && player.getY() - hole.getY() < 10) {
+//				holding = null;
+//				player.addCurrency();
+//				orders = new ArrayList<Orders>();
+//				orders.add(new Orders(surface));
+//			}
+//			else {
+//				a.draw(surface, (int)player.getX(), (int)player.getY(), 50, 50);
 	 
 	 
 	 }
