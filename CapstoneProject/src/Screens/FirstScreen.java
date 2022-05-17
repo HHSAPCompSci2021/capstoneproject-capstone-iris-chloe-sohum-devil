@@ -35,15 +35,16 @@ public class FirstScreen extends Screen {
 	public void draw() {
 
 		surface.background(255,255,255);
-		
+		surface.textAlign(surface.CENTER, surface.CENTER);
 		
 		surface.rect(button.x, button.y, button.width, button.height, 10, 10, 10, 10);
 		surface.fill(0);
 		String str = "Click me to start!";
 		float w = surface.textWidth(str);
 		surface.textSize(25);
-		surface.text(str, button.x+button.width/2-w/2, button.y+button.height/2);
+		surface.text(str, button.x, button.y, button.width, button.height);
 		
+		surface.textAlign(surface.BASELINE);
 		surface.text("Here are the controls for the game:", 25, 25);
 		surface.text("- To move around, use the up, down, left, and right arros keys", 25, 75);
 		surface.text("- To pick up or drop off ingredients, press the spacebar (you\nmay only have one ingredient at a time)", 25, 125);
