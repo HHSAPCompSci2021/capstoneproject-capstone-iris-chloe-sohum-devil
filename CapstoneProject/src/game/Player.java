@@ -72,6 +72,7 @@ public class Player extends Rectangle2D.Double{
 		ingredient = null;
 		disaster = null;
 		holding = false;
+		return stuff;
 	}
 	
 	/**
