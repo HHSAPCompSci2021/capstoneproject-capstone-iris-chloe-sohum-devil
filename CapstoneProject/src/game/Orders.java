@@ -113,4 +113,13 @@ public class Orders implements Interactions{
 		}
 	}
 	
+	/**
+	 * Gets the list of ingredients required for this order
+	 * 
+	 * @return this order's ingredient list
+	 */
+	public ArrayList<Ingredients> getIngredients() {
+		return ingredientsList;
+	}
+	
 }
