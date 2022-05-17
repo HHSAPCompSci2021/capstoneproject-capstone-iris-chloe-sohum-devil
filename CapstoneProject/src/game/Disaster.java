@@ -137,6 +137,12 @@ public class Disaster {
 		return y;
 	}
 	
+	/**
+	 * Gets a number corresponding to the disaster type
+	 * 1 = Fire, 2 = Flood, 3 = Blackout
+	 * 
+	 * @return integer representing a disaster type
+	 */
 	public int getDisaster() {
 		if(type.equals("Fire")) {
 			return 1;
