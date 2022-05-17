@@ -43,6 +43,7 @@ public class SecondScreen extends Screen {
 	private Ingredients[] ingredients;
 	private Interactions interactions; 
 	private ArrayList<Orders> orders; 
+	private ArrayList<Object> holding; 
 	private Player player; 
 	private int start;
 	private LocalTime end;
@@ -153,10 +154,18 @@ public class SecondScreen extends Screen {
 	 
 	 public void grabAction(Ingredients a) { 
 			
-			if ( Math.abs(player.x - a.getX()) < 10) { 
-				
-			}
+			if (surface.keyCode == KeyEvent.VK_SPACE) { 
+				if (Math.abs(player.getX() - a.getX()) < 10) { 
+					if (Math.abs(player.getY() - a.getY()) < 10) { 
+						player.pickUp(holding);
+					} 
+				}
 			
-		}
- 
-}
+			for (int i = 0 ; i < holding.size() ; i++) { 
+				System.out.print(holding.get(i)); 
+			}
+	 }
+	 
+	 
+	 }
+} 
