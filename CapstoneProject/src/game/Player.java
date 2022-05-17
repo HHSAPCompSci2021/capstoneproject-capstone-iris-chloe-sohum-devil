@@ -25,7 +25,7 @@ public class Player extends Rectangle2D.Double{
 	private ArrayList<Disaster> disaster;
 	private boolean holding;
 	private int lives = 3;
-	private int currency = 0;
+	private int currency = 10;
 	
 	/**
 	 * creates a new player
