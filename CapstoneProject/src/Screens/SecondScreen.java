@@ -115,6 +115,7 @@ public class SecondScreen extends Screen {
 //		if (button.contains(p))
 //			surface.switchScreen(ScreenSwitcher.GAME_SCREEN);
 		start = LocalTime.now().toSecondOfDay();
+		endGame();
 	}
 	
 	public void mouseReleased() {
@@ -130,6 +131,7 @@ public class SecondScreen extends Screen {
 				player.loseLife();
 			} 
 		}
+		endGame();
 	}
 	
 	//arrow keys are used to move the player around 
@@ -150,6 +152,7 @@ public class SecondScreen extends Screen {
 		else if (surface.keyCode == KeyEvent.VK_LEFT) {
 			player.walk(-1, 0);
 		}
+		endGame();
 	}
 	 
 	 public void grabAction(Ingredients a) { 
@@ -167,5 +170,11 @@ public class SecondScreen extends Screen {
 	 }
 	 
 	 
+	 }
+	 
+	 public void endGame() {
+		 if(player.getLives() < 0) {
+			 surface.switchScreen(ScreenSwitcher.END_SCREEN);
+		 }
 	 }
 } 

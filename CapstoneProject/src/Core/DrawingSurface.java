@@ -6,6 +6,7 @@ import Screens.FirstScreen;
 import Screens.Screen;
 import Screens.ScreenSwitcher;
 import Screens.SecondScreen;
+import Screens.ThirdScreen;
 import processing.core.PApplet;
 
 /**
