@@ -95,15 +95,12 @@ public class Player extends Rectangle2D.Double{
 		lives = lives + 1;
 	}
 	
-	public void grabObject(Ingredients a) { 
-		
-		if ( Math.abs(x - a.getX()) < 10) { 
-			
-		}
-		
+	
+	public double getX() { 
+		return x; 
 	}
 	
-	public void dropObject() { 
-		
+	public double getY() { 
+		return y; 
 	}
 }
