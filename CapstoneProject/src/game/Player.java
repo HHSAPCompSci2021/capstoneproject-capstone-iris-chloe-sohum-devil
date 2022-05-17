@@ -68,7 +68,7 @@ public class Player extends Rectangle2D.Double{
 	/**
 	 * allows the player to drop off items
 	 */
-	public void dropOff() {
+	public ArrayList<Object> dropOff(ArrayList<Object> stuff) {
 		ingredient = null;
 		disaster = null;
 		holding = false;
