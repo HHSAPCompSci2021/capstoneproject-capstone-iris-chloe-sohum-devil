@@ -31,7 +31,37 @@ public class Hole {
 	 * @param ingredients the ingredients being dropped into the hole
 	 * @return An arrayList of the ingredients dropped into the hole
 	 */
-	public ArrayList<Ingredients> drop(ArrayList<Ingredients> ingredients, ArrayList<Orders> orders) {
+	public boolean drop(ArrayList<Ingredients> temp, ArrayList<Orders> orders) {
+		ArrayList<Ingredients> ingredients = copyIngredientList(temp);
+		
+		for(int i = 0; i < orders.size(); i++) {
+			ArrayList<Ingredients> orderIngredients = orders.get(i).getIngredients();
+			boolean equal = true;
+			if (orderIngredients.size() != ingredients.size()) {
+				equal = false;
+			}
+			else {
+				for(int j = 0; j < orderIngredients.size(); j++) {
+					if(ingredients.indexOf(orderIngredients.get(j)) == -1)
+						equal = false;
+					else
+						ingredients.remove(ingredients.indexOf(orderIngredients.get(j)));
+				}
+			}
+			if(equal) {
+				orders.remove(i);
+				return true;
+			}
+			ingredients = copyIngredientList(temp);
+		}
+		return false;
+	}
+	
+	private ArrayList<Ingredients> copyIngredientList(ArrayList<Ingredients> temp) {
+		ArrayList<Ingredients> ingredients = new ArrayList<Ingredients>();
+		for(Ingredients i : temp) {
+			ingredients.add(i);
+		}
 		return ingredients;
 	}
 	
