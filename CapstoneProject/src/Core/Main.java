@@ -38,10 +38,27 @@ public class Main {
 		window.setVisible(true);
 		canvas.requestFocus();
 		
-		String filepath = "c:\\GitHub\\CapstoneProject\\Volume Beta 08.Biome Fest.mp3"; 
+//		String filepath = "c:\\GitHub\\CapstoneProject\\Volume Beta 08.Biome Fest.mp3"; 
+//		
+//		Music musicObject = new Music(); 
+//		musicObject.playMusic(filepath);
 		
-		Music musicObject = new Music(); 
-		musicObject.playMusic(filepath);
+		//This gets the path to the project, but not into /src for eclipse
+        String path = new File("").getAbsolutePath() + "\\audio\\sound.wav";
+        //Make a File object with a path to the audio file.
+        File sound = new File(path);
+
+        try {
+            AudioInputStream ais = AudioSystem.getAudioInputStream(sound);
+            Clip c = AudioSystem.getClip();
+            c.open(ais); //Clip opens AudioInputStream
+            c.start(); //Start playing audio
+
+            //sleep thread for length of the song
+            Thread.sleep((int)(c.getMicrosecondLength() * 0.001));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
 	}
 	
