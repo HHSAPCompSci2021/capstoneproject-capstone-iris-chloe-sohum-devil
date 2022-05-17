@@ -8,7 +8,7 @@ import processing.core.PApplet;
  * Each type of disaster has its own unique fix.
  * 
  * @author Iris Chou
- * @version 5/13/2022
+ * @version 5/17/2022
  */
 
 public class Disaster {
