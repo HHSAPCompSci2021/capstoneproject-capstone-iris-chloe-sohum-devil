@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.geom.Rectangle2D;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,6 +98,9 @@ public class Player extends Rectangle2D.Double{
 		lives = lives + 1;
 	}
 	
+	public int getLives() {
+		return lives;
+	}
 	
 	public double getX() { 
 		return x; 
@@ -112,5 +116,12 @@ public class Player extends Rectangle2D.Double{
 	
 	public int getCurrency() {
 		return currency;
+	}
+	
+	public boolean tenSeconds(LocalTime start) {
+		if((LocalTime.now().toSecondOfDay() - start.toSecondOfDay()) > 10) {
+			return true;
+		} else	
+			return false;
 	}
 }

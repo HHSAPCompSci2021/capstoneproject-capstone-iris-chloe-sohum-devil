@@ -1,6 +1,14 @@
 package Core;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
 
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
 import javax.swing.JFrame;
 
 import processing.awt.PSurfaceAWT;
@@ -29,7 +37,11 @@ public class Main {
 
 		window.setVisible(true);
 		canvas.requestFocus();
+		
+		
 
 	}
+	
+	
 
 }
