@@ -46,7 +46,7 @@ public class SecondScreen extends Screen {
 	private ArrayList<Object> holding; 
 	private Player player; 
 	private int start;
-	private LocalTime end;
+	private LocalTime end = LocalTime.now();
 	
 	/**
 	 * Intializes the values for each of the objects in the grid 

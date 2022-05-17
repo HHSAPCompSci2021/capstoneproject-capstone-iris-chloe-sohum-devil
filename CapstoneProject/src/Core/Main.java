@@ -22,6 +22,8 @@ import processing.core.PApplet;
  */
 public class Main {
 
+	public final static String fileSeparator = System.getProperty("file.separator");
+
 	public static void main(String[] args) {
 		
 		DrawingSurface drawing = new DrawingSurface();
@@ -41,7 +43,7 @@ public class Main {
 
 		
 		//This gets the path to the project, but not into /src for eclipse
-        String path = new File("").getAbsolutePath() + "\\audio\\sound.wav";
+        String path = new File("").getAbsolutePath() + fileSeparator+"audio"+fileSeparator+"sound.wav";
         //Make a File object with a path to the audio file.
         File sound = new File(path);
 
