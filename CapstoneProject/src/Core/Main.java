@@ -38,6 +38,7 @@ public class Main {
 		window.setVisible(true);
 		canvas.requestFocus();
 		
+
 		
 		//This gets the path to the project, but not into /src for eclipse
         String path = new File("").getAbsolutePath() + "\\audio\\sound.wav";
