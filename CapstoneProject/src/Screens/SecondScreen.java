@@ -160,7 +160,6 @@ public class SecondScreen extends Screen {
 						player.pickUp(holding);
 					} 
 				}
-			}
 			
 			for (int i = 0 ; i < holding.size() ; i++) { 
 				System.out.print(holding.get(i)); 
@@ -168,5 +167,5 @@ public class SecondScreen extends Screen {
 	 }
 	 
 	 
- 
-}
+	 }
+} 

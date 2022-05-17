@@ -8,7 +8,7 @@ import processing.core.PApplet;
  * Each type of disaster has its own unique fix.
  * 
  * @author Iris Chou
- * @version 5/13/2022
+ * @version 5/17/2022
  */
 
 public class Disaster {
@@ -137,6 +137,12 @@ public class Disaster {
 		return y;
 	}
 	
+	/**
+	 * Gets a number corresponding to the disaster type
+	 * 1 = Fire, 2 = Flood, 3 = Blackout
+	 * 
+	 * @return integer representing a disaster type
+	 */
 	public int getDisaster() {
 		if(type.equals("Fire")) {
 			return 1;
