@@ -30,20 +30,25 @@ public class ThirdScreen extends Screen{
 
 	/**
 	 * Draws the screen including the button and appropriate text
+	 * 
+	 * @post the PApplet textAlign() is set to CENTER, CENTER
+	 * @post the PApplet textSize() is set to 100
+	 * @post the PApplet fill() is set to red (255, 0, 0)
 	 */
 	public void draw() {
 
 		surface.background(255,255,255);
-		
+		surface.textAlign(surface.CENTER, surface.CENTER);
 		
 		surface.rect(button.x, button.y, button.width, button.height, 10, 10, 10, 10);
 		surface.fill(0);
 		String str = "Play again";
-		float w = surface.textWidth(str);
 		surface.textSize(25);
-		surface.text(str, button.x+button.width/2-w/2, button.y+button.height/2);
+		surface.text(str, button.x, button.y, button.width, button.height);
 		
-		surface.text("Game over", 25, 25);
+		surface.fill(255, 0, 0);
+		surface.textSize(100);
+		surface.text("Game Over", 0, 0, 800, 600);
 		
 	}
 
