@@ -98,6 +98,9 @@ public class Player extends Rectangle2D.Double{
 		lives = lives + 1;
 	}
 	
+	public int getLives() {
+		return lives;
+	}
 	
 	public double getX() { 
 		return x; 
