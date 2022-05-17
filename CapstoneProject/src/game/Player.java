@@ -68,10 +68,11 @@ public class Player extends Rectangle2D.Double{
 	/**
 	 * allows the player to drop off items
 	 */
-	public void dropOff() {
+	public ArrayList<Object> dropOff(ArrayList<Object> stuff) {
 		ingredient = null;
 		disaster = null;
 		holding = false;
+		return stuff;
 	}
 	
 	/**
@@ -94,5 +95,16 @@ public class Player extends Rectangle2D.Double{
 	public void gainLife() {
 		lives = lives + 1;
 	}
-
+	
+	public void grabObject(Ingredients a) { 
+		
+		if ( Math.abs(x - a.getX()) < 10) { 
+			
+		}
+		
+	}
+	
+	public void dropObject() { 
+		
+	}
 }
