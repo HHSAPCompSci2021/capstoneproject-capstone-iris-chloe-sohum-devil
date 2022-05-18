@@ -99,4 +99,12 @@ public class Hole {
 	public int getY() {
 		return y;
 	}
+	
+	public boolean orderCompleted() { 
+		
+		copyIngredients(); 
+		
+		return false; 
+	}
+	
 }

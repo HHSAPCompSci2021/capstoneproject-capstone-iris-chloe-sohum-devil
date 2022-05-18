@@ -31,7 +31,7 @@ import processing.core.PImage;
 
 public class SecondScreen extends Screen {
 	
-	private DrawingSurface surface;
+	private DrawingSurface surface ;
 	private Object[][] grid; 
 	private Rectangle button; 
 	
