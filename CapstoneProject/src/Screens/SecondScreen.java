@@ -110,6 +110,10 @@ public class SecondScreen extends Screen {
 		for(int i = 0; i < orders.size(); i++) {
 			orders.get(i).draw(surface, i);
 		}
+		d1.drawEquipment(surface, 750, 300, 50, 50);
+		d2.drawEquipment(surface, 750, 350, 50, 50);
+		d3.drawEquipment(surface, 750, 400, 50, 50);
+		
 		if(LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 30 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 45) {
 			d1.drawDisaster(surface);
 			end = LocalTime.now();

@@ -33,7 +33,7 @@ public class Disaster {
 			picture = "Fire Extinguisher.png";
 		}
 		else if (type.equals("Flood")) {
-			picture = "Sandbags.png";
+			picture = "Sandbag.png";
 		}
 		else if(type.equals("Blackout")) {
 			picture = "Lightswitch.png";
@@ -81,8 +81,8 @@ public class Disaster {
 	 * @param width the width of the grids
 	 * @param height the height of the grids
 	 */
-	public void drawEquipment(PApplet drawer, double width, double height) {
-		drawer.image(drawer.loadImage("img/" + picture), (float)width*x, (float)height*y, (float)width, (float)height);
+	public void drawEquipment(PApplet drawer, int x, int y, double width, double height) {
+		drawer.image(drawer.loadImage("img/" + picture), x, y, (float)width, (float)height);
 	}
 	
 	/**
