@@ -155,6 +155,11 @@ public class SecondScreen extends Screen {
 			for(Ingredients e: ingredients) {
 				grabAction(e);
 			}
+			if (Math.abs(player.getX() - hole.getX()) < 10) { 
+				if (Math.abs(player.getY() - hole.getY()) < 10) { 
+					hole.drop(player.get, orders)
+				} 
+			}
 		}
 		endGame();
 	}
