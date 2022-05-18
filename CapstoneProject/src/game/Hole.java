@@ -100,10 +100,5 @@ public class Hole {
 		return y;
 	}
 	
-	public boolean orderCompleted() { 
-		
-		
-		return false; 
-	}
 	
 }

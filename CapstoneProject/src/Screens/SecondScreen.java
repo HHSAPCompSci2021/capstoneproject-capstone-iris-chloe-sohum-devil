@@ -213,4 +213,11 @@ public class SecondScreen extends Screen {
 			 surface.switchScreen(ScreenSwitcher.END_SCREEN);
 		 }
 	 }
+	 
+	 public boolean orderCompleted()  { 
+		 
+		 if (ingredientsList.containsAll(orders))
+		 return false; 
+	 }
+	 
 } 
