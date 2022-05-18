@@ -99,12 +99,5 @@ public class Hole {
 	public int getY() {
 		return y;
 	}
-		
-	public boolean orderCompleted() { 
-		
-		
-
-		return false; 
-	}
 	
 }
