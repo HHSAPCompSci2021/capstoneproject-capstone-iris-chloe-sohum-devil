@@ -81,7 +81,7 @@ public class Player extends Rectangle2D.Double{
 	public Disaster dropOffEquipment() {
 		Disaster temp = disaster;
 		disaster = null;
-		return disaster;
+		return temp;
 	}
 	
 	/**

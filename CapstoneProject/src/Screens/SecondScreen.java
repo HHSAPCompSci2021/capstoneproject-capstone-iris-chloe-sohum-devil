@@ -171,6 +171,9 @@ public class SecondScreen extends Screen {
 					if (equip != null) 
 						player.dropOffEquipment();
 					else if (plate != null) {
+						for(Ingredients i : plate) {
+							System.out.println(i.getName());
+						}
 						boolean complete = hole.drop(player.dropOffOrder(), orders);
 						if(complete) {
 							player.addCurrency();
