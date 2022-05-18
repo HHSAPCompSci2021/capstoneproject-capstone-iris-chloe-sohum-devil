@@ -102,8 +102,8 @@ public class Hole {
 		
 	public boolean orderCompleted() { 
 		
-		//copyIngredients(); 
 		
+
 		return false; 
 	}
 	
