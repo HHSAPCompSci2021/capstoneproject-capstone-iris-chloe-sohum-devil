@@ -8,12 +8,13 @@ import processing.core.PApplet;
  * Each type of disaster has its own unique fix.
  * 
  * @author Iris Chou
- * @version 5/17/2022
+ * @version 5/18/2022
  */
 
 public class Disaster {
 	private String type;
 	private boolean resolved;
+	private boolean started;
 	private String picture;
 	private int x;
 	private int y;
@@ -42,6 +43,7 @@ public class Disaster {
 		x = xcord;
 		y = ycord;
 		time = LocalTime.now();
+		started = false;
 	}
 	
 	/**
@@ -63,6 +65,7 @@ public class Disaster {
 	 */
 	public void disasterResolved() {
 		resolved = true;
+		started = false;
 	}
 	
 	/**
@@ -86,11 +89,12 @@ public class Disaster {
 	}
 	
 	/**
-	 * Resets the disaster by changing the timer by to 0 and resolves the disaster
+	 * Resets the disaster by changing the timer by to 0, resolves the disaster, and starts the disaster
 	 */
 	public void reset() {
 		time = LocalTime.now();
 		disasterResolved();
+		started = true;
 	}
 	
 	/**
@@ -153,5 +157,9 @@ public class Disaster {
 		else{
 			return 3;
 		}
+	}
+	
+	public boolean isStarted() {
+		return started;
 	}
 }

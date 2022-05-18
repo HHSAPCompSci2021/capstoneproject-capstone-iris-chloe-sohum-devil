@@ -28,8 +28,7 @@ public class Hole {
 	/**
 	 * Drop a set of ingredients into the hole
 	 * 
-	 * @param ingredients the ingredients being dropped into the hole
-	 * @return An arrayList of the ingredients dropped into the hole
+	 * @return returns true if the passed in order exist in the list of orders
 	 */
 	public boolean drop(ArrayList<Ingredients> temp, ArrayList<Orders> orders) {
 		ArrayList<Ingredients> ingredients = copyIngredientList(temp);
