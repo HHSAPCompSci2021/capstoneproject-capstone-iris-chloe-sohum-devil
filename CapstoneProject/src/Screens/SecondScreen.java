@@ -195,9 +195,8 @@ public class SecondScreen extends Screen {
 				} 
 			}
 			
-//			for (int i = 0 ; i < holding.size() ; i++) { 
-//				System.out.print(holding.get(i)); 
-//			}
+			
+			
 //			} else if (player.getX() - hole.getX() < 10 && player.getY() - hole.getY() < 10) {
 //				holding = null;
 //				player.addCurrency();
