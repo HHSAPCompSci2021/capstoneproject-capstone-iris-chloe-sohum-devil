@@ -47,6 +47,7 @@ public class SecondScreen extends Screen {
 	private Player player; 
 	private int start;
 	private LocalTime end = LocalTime.now();
+	private PImage background;
 	
 	/**
 	 * Intializes the values for each of the objects in the grid 
@@ -85,6 +86,7 @@ public class SecondScreen extends Screen {
 		orders = new ArrayList<Orders>();
 		orders.add(new Orders(surface));
 		player = new Player (surface.loadImage("img/Player.jpg"), 300, 300);
+		background = surface.loadImage("img/KitchenGrid.png");
 		
 	}
 
@@ -93,7 +95,8 @@ public class SecondScreen extends Screen {
 	// sequence and after the last line is read, the first 
 	// line is executed again.
 	public void draw() {
-		surface.background(0, 255, 255);
+		surface.image(background, 0, 0, 800, 600);
+	//	surface.background(0, 255, 255);
 		grid = new Character[20][20];
 		counter.draw(surface, 50,50);
 		hole.draw(surface, 50, 50);
@@ -209,7 +212,6 @@ public class SecondScreen extends Screen {
 	 
 	 public void endGame() {
 		 if(player.getLives() < 0) {
-			 int c = surface.transferPoints(player.getCurrency());
 			 surface.switchScreen(ScreenSwitcher.END_SCREEN);
 		 }
 	 }
