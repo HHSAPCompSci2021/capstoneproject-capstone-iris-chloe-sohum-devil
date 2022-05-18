@@ -164,22 +164,20 @@ public class SecondScreen extends Screen {
 			for(Ingredients e: ingredients) {
 				grabAction(e);
 			}
-			if (Math.abs(player.getX() - hole.getX()) < 10) { 
-				if (Math.abs(player.getY() - hole.getY()) < 10) { 
-					ArrayList<Ingredients> plate = player.getOrder();
-					Disaster equip = player.getEquipment();
-					if (equip != null) 
-						player.dropOffEquipment();
-					else if (plate != null) {
-						for(Ingredients i : plate) {
-							System.out.println(i.getName());
-						}
-						boolean complete = hole.drop(player.dropOffOrder(), orders);
-						if(complete) {
-							player.addCurrency();
-						}
+			if (Math.abs(player.getX() - hole.getX()) < 10 && Math.abs(player.getY() - hole.getY()) < 10) { 
+				ArrayList<Ingredients> plate = player.getOrder();
+				Disaster equip = player.getEquipment();
+				if (equip != null)
+					player.dropOffEquipment();
+				else if (!plate.isEmpty()) {
+					for (Ingredients i : plate) {
+						System.out.println(i.getName());
 					}
-				} 
+					boolean complete = hole.drop(player.dropOffOrder(), orders);
+					if (complete) {
+						player.addCurrency();
+					}
+				}
 			}
 		}
 		endGame();
