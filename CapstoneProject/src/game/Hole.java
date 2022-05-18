@@ -81,7 +81,6 @@ public class Hole {
 		drawer.ellipseMode(drawer.CORNER);
 		drawer.ellipse((float)width*x, (float)height*y, (float)width, (float)height);
 	}
-	
 	/**
 	 * Gets the x-coordinate of the hole
 	 * 
