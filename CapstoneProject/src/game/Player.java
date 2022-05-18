@@ -22,10 +22,10 @@ public class Player extends Rectangle2D.Double{
 	public static final int PLAYER_HEIGHT = 60;
 	private PImage image;
 	private ArrayList<Ingredients> ingredient;
-	private ArrayList<Disaster> disaster;
+	private Disaster disaster;
 	private boolean holding;
 	private int lives = 3;
-	private int currency = 0;
+	private int currency = 10;
 	
 	/**
 	 * creates a new player
@@ -37,7 +37,7 @@ public class Player extends Rectangle2D.Double{
 		super(x,y,PLAYER_WIDTH,PLAYER_HEIGHT);
 		image = img;
 		ingredient = new ArrayList<Ingredients>();
-		disaster = new ArrayList<Disaster>();
+		disaster = null;
 		holding = false;
 	}
 
@@ -55,26 +55,33 @@ public class Player extends Rectangle2D.Double{
 	 * allows the player to pick up objects
 	 * @param stuff the list of stuff the player should pick up
 	 */
-	public void pickUp(ArrayList<Object> stuff) {
+	public void pickUp(Ingredients i) {
+		ingredient.add(i);
+		System.out.println(i.getName());
 		
-		for (Object e: stuff) {
-			if(e instanceof Ingredients) {
-				ingredient.add((Ingredients)e);
-			} else if (e instanceof Disaster) {
-				disaster.add((Disaster)e);
-			}
-		}
-		holding = true;
+//		for (Object e: stuff) {
+//			if(e instanceof Ingredients) {
+//				ingredient.add((Ingredients)e);
+//			} else if (e instanceof Disaster) {
+//				disaster.add((Disaster)e);
+//			}
+//		}
+//		holding = true;
 	}
 	
 	/**
 	 * allows the player to drop off items
 	 */
-	public ArrayList<Object> dropOff(ArrayList<Object> stuff) {
-		ingredient = null;
+	public ArrayList<Ingredients> dropOffOrder() {
+		ArrayList<Ingredients> temp = ingredient;
+		ingredient = new ArrayList<Ingredients>();
+		return temp;
+	}
+	
+	public Disaster dropOffEquipment() {
+		Disaster temp = disaster;
 		disaster = null;
-		holding = false;
-		return stuff;
+		return temp;
 	}
 	
 	/**
@@ -88,6 +95,14 @@ public class Player extends Rectangle2D.Double{
 			g.fill(100);
 			g.rect((float)x,(float)y,(float)width,(float)height);
 		}
+	}
+	
+	public ArrayList<Ingredients> getOrder() {
+		return ingredient;
+	}
+	
+	public Disaster getEquipment() {
+		return disaster;
 	}
 	
 	public void loseLife() {

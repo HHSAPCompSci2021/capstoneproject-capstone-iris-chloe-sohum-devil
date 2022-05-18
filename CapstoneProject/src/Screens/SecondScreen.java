@@ -46,7 +46,7 @@ public class SecondScreen extends Screen {
 	private ArrayList<Object> holding; 
 	private Player player; 
 	private int start;
-	private LocalTime end;
+	private LocalTime end = LocalTime.now();
 	
 	/**
 	 * Intializes the values for each of the objects in the grid 
@@ -103,6 +103,15 @@ public class SecondScreen extends Screen {
 		for(int i = 0; i < orders.size(); i++) {
 			orders.get(i).draw(surface, i);
 		}
+		if(LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 30 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 45) {
+			d1.drawDisaster(surface);
+			end = LocalTime.now();
+		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 45 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 60) {
+			d1.drawDisaster(surface);
+			end = LocalTime.now();
+		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 60) {
+			d3.drawDisaster(surface);
+		}
 //		d1.drawDisaster(surface); 
 //		d2.drawDisaster(surface); 
 //		d3.drawDisaster(surface);
@@ -155,38 +164,52 @@ public class SecondScreen extends Screen {
 			for(Ingredients e: ingredients) {
 				grabAction(e);
 			}
+			if (Math.abs(player.getX() - hole.getX()) < 10) { 
+				if (Math.abs(player.getY() - hole.getY()) < 10) { 
+					ArrayList<Ingredients> plate = player.getOrder();
+					Disaster equip = player.getEquipment();
+					if (equip != null) 
+						player.dropOffEquipment();
+					else if (plate != null) {
+						for(Ingredients i : plate) {
+							System.out.println(i.getName());
+						}
+						boolean complete = hole.drop(player.dropOffOrder(), orders);
+						if(complete) {
+							player.addCurrency();
+						}
+					}
+				} 
+			}
 		}
 		endGame();
 	}
 	 
 	 public void grabAction(Ingredients a) { 
-			if(holding == null) {
-			if (surface.keyCode == KeyEvent.VK_SPACE) { 
-				if (Math.abs(player.getX() - a.getX()) < 10) { 
-					if (Math.abs(player.getY() - a.getY()) < 10) { 
-						player.pickUp(holding);
-					} 
-				}
+			if (Math.abs(player.getX() - a.getX()) < 10) { 
+				if (Math.abs(player.getY() - a.getY()) < 10) { 
+					player.pickUp(a);
+				} 
+			}
 			
-			for (int i = 0 ; i < holding.size() ; i++) { 
-				System.out.print(holding.get(i)); 
-			}
-			} else if (player.getX() - hole.getX() < 10 && player.getY() - hole.getY() < 10) {
-				holding = null;
-				player.addCurrency();
-				orders = new ArrayList<Orders>();
-				orders.add(new Orders(surface));
-			}
-			else {
-				a.draw(surface, (int)player.getX(), (int)player.getY(), 50, 50);
-			}
-	 }
+//			for (int i = 0 ; i < holding.size() ; i++) { 
+//				System.out.print(holding.get(i)); 
+//			}
+//			} else if (player.getX() - hole.getX() < 10 && player.getY() - hole.getY() < 10) {
+//				holding = null;
+//				player.addCurrency();
+//				orders = new ArrayList<Orders>();
+//				orders.add(new Orders(surface));
+//			}
+//			else {
+//				a.draw(surface, (int)player.getX(), (int)player.getY(), 50, 50);
 	 
 	 
 	 }
 	 
 	 public void endGame() {
 		 if(player.getLives() < 0) {
+			 int c = surface.transferPoints(player.getCurrency());
 			 surface.switchScreen(ScreenSwitcher.END_SCREEN);
 		 }
 	 }
