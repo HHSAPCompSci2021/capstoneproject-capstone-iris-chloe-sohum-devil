@@ -166,7 +166,16 @@ public class SecondScreen extends Screen {
 			}
 			if (Math.abs(player.getX() - hole.getX()) < 10) { 
 				if (Math.abs(player.getY() - hole.getY()) < 10) { 
-					hole.drop(player.get, orders)
+					ArrayList<Ingredients> plate = player.getOrder();
+					Disaster equip = player.getEquipment();
+					if (equip != null) 
+						player.dropOffEquipment();
+					else if (plate != null) {
+						boolean complete = hole.drop(player.dropOffOrder(), orders);
+						if(complete) {
+							player.addCurrency();
+						}
+					}
 				} 
 			}
 		}
@@ -196,9 +205,9 @@ public class SecondScreen extends Screen {
 	 }
 	 
 	 public void endGame() {
-	//	 if(player.getLives() < 0) {
+		 if(player.getLives() < 0) {
 			 int c = surface.transferPoints(player.getCurrency());
 			 surface.switchScreen(ScreenSwitcher.END_SCREEN);
-	//	 }
+		 }
 	 }
 } 

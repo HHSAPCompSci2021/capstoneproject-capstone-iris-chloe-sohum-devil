@@ -22,7 +22,7 @@ public class Player extends Rectangle2D.Double{
 	public static final int PLAYER_HEIGHT = 60;
 	private PImage image;
 	private ArrayList<Ingredients> ingredient;
-	private ArrayList<Disaster> disaster;
+	private Disaster disaster;
 	private boolean holding;
 	private int lives = 3;
 	private int currency = 10;
@@ -37,7 +37,7 @@ public class Player extends Rectangle2D.Double{
 		super(x,y,PLAYER_WIDTH,PLAYER_HEIGHT);
 		image = img;
 		ingredient = new ArrayList<Ingredients>();
-		disaster = new ArrayList<Disaster>();
+		disaster = null;
 		holding = false;
 	}
 
@@ -72,11 +72,16 @@ public class Player extends Rectangle2D.Double{
 	/**
 	 * allows the player to drop off items
 	 */
-	public ArrayList<Object> dropOff(ArrayList<Object> stuff) {
-		ingredient = null;
+	public ArrayList<Ingredients> dropOffOrder() {
+		ArrayList<Ingredients> temp = ingredient;
+		ingredient = new ArrayList<Ingredients>();
+		return temp;
+	}
+	
+	public Disaster dropOffEquipment() {
+		Disaster temp = disaster;
 		disaster = null;
-		holding = false;
-		return stuff;
+		return disaster;
 	}
 	
 	/**
@@ -90,6 +95,14 @@ public class Player extends Rectangle2D.Double{
 			g.fill(100);
 			g.rect((float)x,(float)y,(float)width,(float)height);
 		}
+	}
+	
+	public ArrayList<Ingredients> getOrder() {
+		return ingredient;
+	}
+	
+	public Disaster getEquipment() {
+		return disaster;
 	}
 	
 	public void loseLife() {
