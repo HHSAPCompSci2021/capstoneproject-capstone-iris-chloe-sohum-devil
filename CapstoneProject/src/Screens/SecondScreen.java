@@ -96,6 +96,11 @@ public class SecondScreen extends Screen {
 	// line is executed again.
 	public void draw() {
 		surface.image(background, 0, 0, 800, 600);
+		surface.fill(0);
+		surface.textSize(30);
+		surface.text("Lives: "+player.getLives(), 650, 50);
+		surface.text("Points: "+player.getCurrency(), 650, 100);
+
 		grid = new Character[20][20];
 		counter.draw(surface, 50,50);
 		hole.draw(surface, 50, 50);

@@ -47,9 +47,6 @@ public class ThirdScreen extends Screen{
 		surface.textSize(25);
 		surface.text(str, button.x, button.y, button.width, button.height);
 		
-		String counter = "Points: "+points;
-		surface.textSize(25);
-		surface.text(counter, 100, 100);
 		
 		surface.fill(255, 0, 0);
 		surface.textSize(100);
