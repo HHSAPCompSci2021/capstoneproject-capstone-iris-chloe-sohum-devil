@@ -96,6 +96,11 @@ public class SecondScreen extends Screen {
 	// line is executed again.
 	public void draw() {
 		surface.image(background, 0, 0, 800, 600);
+		surface.fill(0);
+		surface.textSize(30);
+		surface.text("Lives: "+player.getLives(), 650, 50);
+		surface.text("Points: "+player.getCurrency(), 650, 100);
+
 		grid = new Character[20][20];
 		counter.draw(surface, 50,50);
 		hole.draw(surface, 50, 50);
@@ -166,22 +171,20 @@ public class SecondScreen extends Screen {
 			for(Ingredients e: ingredients) {
 				grabAction(e);
 			}
-			if (Math.abs(player.getX() - hole.getX()) < 10) { 
-				if (Math.abs(player.getY() - hole.getY()) < 10) { 
-					ArrayList<Ingredients> plate = player.getOrder();
-					Disaster equip = player.getEquipment();
-					if (equip != null) 
-						player.dropOffEquipment();
-					else if (plate != null) {
-						for(Ingredients i : plate) {
-							System.out.println(i.getName());
-						}
-						boolean complete = hole.drop(player.dropOffOrder(), orders);
-						if(complete) {
-							player.addCurrency();
-						}
+			if (Math.abs(player.getX()- hole.getX()*50) < 10 && Math.abs(player.getY() - hole.getY()*50) < 10) { 
+				ArrayList<Ingredients> plate = player.getOrder();
+				Disaster equip = player.getEquipment();
+				for (Ingredients i : plate) {
+					System.out.println(i.getName());
+				}
+				if (equip != null)
+					player.dropOffEquipment();
+				else if (!plate.isEmpty()) {
+					boolean complete = hole.drop(player.dropOffOrder(), orders);
+					if (complete) {
+						player.addCurrency();
 					}
-				} 
+				}
 			}
 		}
 		endGame();
