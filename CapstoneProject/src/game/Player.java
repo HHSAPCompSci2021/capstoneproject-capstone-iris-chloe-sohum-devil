@@ -126,6 +126,7 @@ public class Player extends Rectangle2D.Double{
 	}
 	
 	public void addCurrency() {
+		
 		currency = currency + 10;
 	}
 	

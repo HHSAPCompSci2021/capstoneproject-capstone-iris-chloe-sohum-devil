@@ -219,8 +219,14 @@ public class SecondScreen extends Screen {
 	 
 	 public boolean orderCompleted()  { 
 		 
-		 if (ingredientsList.containsAll(orders))
-		 return false; 
+		 if (player.getOrder().containsAll(orders) && (orders.containsAll(player.getOrder()))) { return true;  }
+		 return false;  
+	 }
+	 
+	 public void orderCompletedPoints() { 
+		 if ( orderCompleted()) { 
+			 player.addCurrency();
+		 }
 	 }
 	 
 } 
