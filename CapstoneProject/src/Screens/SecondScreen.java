@@ -46,7 +46,7 @@ public class SecondScreen extends Screen {
 	private ArrayList<Object> holding; 
 	private Player player; 
 	private int start;
-	private LocalTime end;
+	private LocalTime end = LocalTime.now();
 	
 	/**
 	 * Intializes the values for each of the objects in the grid 
@@ -102,6 +102,15 @@ public class SecondScreen extends Screen {
 		}
 		for(int i = 0; i < orders.size(); i++) {
 			orders.get(i).draw(surface, i);
+		}
+		if(LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 30 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 45) {
+			d1.drawDisaster(surface);
+			end = LocalTime.now();
+		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 45 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 60) {
+			d1.drawDisaster(surface);
+			end = LocalTime.now();
+		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 60) {
+			d3.drawDisaster(surface);
 		}
 //		d1.drawDisaster(surface); 
 //		d2.drawDisaster(surface); 
@@ -187,8 +196,9 @@ public class SecondScreen extends Screen {
 	 }
 	 
 	 public void endGame() {
-		 if(player.getLives() < 0) {
+	//	 if(player.getLives() < 0) {
+			 int c = surface.transferPoints(player.getCurrency());
 			 surface.switchScreen(ScreenSwitcher.END_SCREEN);
-		 }
+	//	 }
 	 }
 } 

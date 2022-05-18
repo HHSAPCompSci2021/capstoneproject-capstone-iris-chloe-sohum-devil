@@ -1,5 +1,6 @@
 package Screens;
 
+import game.Player;
 
 /**
  * interface for the screens
