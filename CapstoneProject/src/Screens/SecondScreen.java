@@ -110,7 +110,7 @@ public class SecondScreen extends Screen {
 		for(int i = 0; i < orders.size(); i++) {
 			orders.get(i).draw(surface, i);
 		}
-		
+
 		if(d1.isResolved() == false && d1.isStarted()) {
 			reset();
 		}
@@ -138,6 +138,10 @@ public class SecondScreen extends Screen {
 		if(d3.isStarted()) {
 			d3.drawDisaster(surface);
 		}
+		
+		d1.drawEquipment(surface, 700, 200, 75, 75);
+		d2.drawEquipment(surface, 700, 300, 75, 75);
+		d3.drawEquipment(surface, 700, 400, 75, 75);
 		
 //		if(LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 30 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 45) {
 //			d1.drawDisaster(surface);
@@ -255,4 +259,12 @@ public class SecondScreen extends Screen {
 			 surface.switchScreen(ScreenSwitcher.END_SCREEN);
 		 }
 	 }
+	 
+	 
+	 public void orderCompletedPoints() { 
+		 if (hole.drop(player.getOrder(), orders)) { 
+			 player.addCurrency();
+		 }
+	 }
+	 
 } 
