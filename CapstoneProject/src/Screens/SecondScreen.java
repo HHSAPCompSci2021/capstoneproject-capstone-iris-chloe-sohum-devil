@@ -4,7 +4,7 @@ package Screens;
  * game screen with the grid 
  * 
  * @author sphadke983
- * @version 5/13/2022
+ * @version 5/18/2022
  */
 
 import java.awt.Desktop.Action;
@@ -110,19 +110,48 @@ public class SecondScreen extends Screen {
 		for(int i = 0; i < orders.size(); i++) {
 			orders.get(i).draw(surface, i);
 		}
+
+		if(d1.isResolved() == false && d1.isStarted()) {
+			reset();
+		}
+		if(d2.isResolved() == false && d2.isStarted()) {
+			reset();
+		}
+		if(d3.isResolved() == false && d3.isStarted()) {
+			reset();
+		}
+		
+		if(LocalTime.now().getSecond() == 0) {
+			d1.reset();
+		} else if (LocalTime.now().getSecond() == 20) {
+			d2.reset();
+		} else if (LocalTime.now().getSecond() == 40) {
+			d3.reset();
+		}
+		
+		if(d1.isStarted()) {
+			d1.drawDisaster(surface);
+		}
+		if(d2.isStarted()) {
+			d2.drawDisaster(surface);
+		}
+		if(d3.isStarted()) {
+			d3.drawDisaster(surface);
+		}
+		
 		d1.drawEquipment(surface, 700, 200, 75, 75);
 		d2.drawEquipment(surface, 700, 300, 75, 75);
 		d3.drawEquipment(surface, 700, 400, 75, 75);
 		
-		if(LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 30 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 45) {
-			d1.drawDisaster(surface);
-			end = LocalTime.now();
-		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 45 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 60) {
-			d1.drawDisaster(surface);
-			end = LocalTime.now();
-		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 60) {
-			d3.drawDisaster(surface);
-		}
+//		if(LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 30 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 45) {
+//			d1.drawDisaster(surface);
+//			end = LocalTime.now();
+//		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 45 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 60) {
+//			d1.drawDisaster(surface);
+//			end = LocalTime.now();
+//		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 60) {
+//			d3.drawDisaster(surface);
+//		}
 //		d1.drawDisaster(surface); 
 //		d2.drawDisaster(surface); 
 //		d3.drawDisaster(surface);
@@ -178,9 +207,9 @@ public class SecondScreen extends Screen {
 			if (Math.abs(player.getX()- hole.getX()*50) < 10 && Math.abs(player.getY() - hole.getY()*50) < 10) { 
 				ArrayList<Ingredients> plate = player.getOrder();
 				Disaster equip = player.getEquipment();
-				for (Ingredients i : plate) {
-					System.out.println(i.getName());
-				}
+//				for (Ingredients i : plate) {
+//					System.out.println(i.getName());
+//				}
 				if (equip != null)
 					player.dropOffEquipment();
 				else if (!plate.isEmpty()) {
@@ -193,6 +222,16 @@ public class SecondScreen extends Screen {
 		}
 		endGame();
 	}
+	 
+	 private void reset() {
+		orders = new ArrayList<Orders>();
+		orders.add(new Orders(surface));
+		d1.disasterResolved();
+		d2.disasterResolved();
+		d3.disasterResolved();
+		player.loseLife();
+		
+	 }
 	 
 	 public void grabAction(Ingredients a) { 
 			if (Math.abs(player.getX() - a.getX()) < 10) { 

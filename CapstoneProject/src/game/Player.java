@@ -14,7 +14,7 @@ import processing.core.PImage;
  * runs the player for the game, allows the player to move around the screen, pick up, and drop off objects
  * 
  * @author cpoon870 & sphadke983 
- * @version 5/13/2022
+ * @version 5/18/2022
  */
 public class Player extends Rectangle2D.Double{
 	
@@ -57,7 +57,7 @@ public class Player extends Rectangle2D.Double{
 	 */
 	public void pickUp(Ingredients i) {
 		ingredient.add(i);
-		System.out.println(i.getName());
+//		System.out.println(i.getName());
 		
 //		for (Object e: stuff) {
 //			if(e instanceof Ingredients) {
