@@ -46,10 +46,6 @@ public float ratioX, ratioY;
 		activeScreen = screens.get(0);
 	}
 	
-	public int transferPoints(int points) {
-		return points;
-	}
-	
 	/**
 	 * the setup for the drawing surface
 	 * loads the screens

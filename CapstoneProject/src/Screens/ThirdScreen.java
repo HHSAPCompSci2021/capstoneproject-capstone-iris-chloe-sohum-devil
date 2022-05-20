@@ -9,7 +9,7 @@ import Core.DrawingSurface;
  * The ending screen for the player that can take the player back to the menu screen
  * 
  * @author irisc
- * @version 5/17/2022
+ * @version 5/20/2022
  */
 public class ThirdScreen extends Screen{
 	private DrawingSurface surface;
