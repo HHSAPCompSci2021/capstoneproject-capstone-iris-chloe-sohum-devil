@@ -122,17 +122,18 @@ public class SecondScreen extends Screen {
 			reset();
 		}
 		
-		if(LocalTime.now().getSecond() == 0 && !d1.isStarted()) {
-			d1.reset();
-		} else if (LocalTime.now().getSecond() == 20 && !d2.isStarted()) {
-			d2.reset();
-		} else if (LocalTime.now().getSecond() == 40 && !d3.isStarted()) {
-			d3.reset();
-		}
+//		if(LocalTime.now().getSecond() == 0 && !d1.isStarted()) {
+//			d1.reset();
+//		} else if (LocalTime.now().getSecond() == 20 && !d2.isStarted()) {
+//			d2.reset();
+//		} else if (LocalTime.now().getSecond() == 40 && !d3.isStarted()) {
+//			d3.reset();
+//		}
 		
 		if(d1.isStarted()) {
 			d1.drawDisaster(surface);
 			System.out.println("Drawing Fire");
+			
 		}
 		if(d2.isStarted()) {
 			d2.drawDisaster(surface);
@@ -147,15 +148,15 @@ public class SecondScreen extends Screen {
 		d2.drawEquipment(surface, 75, 75);
 		d3.drawEquipment(surface, 75, 75);
 		
-//		if(LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 30 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 45) {
-//			d1.drawDisaster(surface);
-//			end = LocalTime.now();
-//		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 45 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 60) {
-//			d1.drawDisaster(surface);
-//			end = LocalTime.now();
-//		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 60) {
-//			d3.drawDisaster(surface);
-//		}
+		if(LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 30 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 45) {
+			d1.drawDisaster(surface);
+			end = LocalTime.now();
+		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 45 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 60) {
+			d1.drawDisaster(surface);
+			end = LocalTime.now();
+		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 60) {
+			d3.drawDisaster(surface);
+		}
 
 		player.draw(surface); 
 		endGame();
@@ -224,13 +225,17 @@ public class SecondScreen extends Screen {
 			}
 		}
 		if (surface.keyCode == KeyEvent.VK_ENTER) {
-			if(Math.abs(player.getX()- d1.getX()) < 10 && Math.abs(player.getY() - d1.getY()) < 10) {
+//			System.out.println("Player: (" + player.getX() + ", " + player.getY() + ")");
+//			System.out.println("Fire: (" + d1.getX() + ", " + d1.getY() + ")");
+//			System.out.println("Flood: (" + d2.getX() + ", " + d2.getY() + ")");
+//			System.out.println("Blackout: (" + d3.getX() + ", " + d3.getY() + ")");
+			if(Math.abs(player.getX()- d1.getX()) < 50 && Math.abs(player.getY() - d1.getY()) < 50) {
 				d1.disasterResolved();
 			}
-			else if(Math.abs(player.getX()- d2.getX()) < 10 && Math.abs(player.getY() - d2.getY()) < 10) {
+			else if(Math.abs(player.getX()- d2.getX()) < 50 && Math.abs(player.getY() - d2.getY()) < 50) {
 				d2.disasterResolved();
 			}
-			else if(Math.abs(player.getX()- d3.getX()) < 10 && Math.abs(player.getY() - d3.getY()) < 10) {
+			else if(Math.abs(player.getX()- d3.getX()) < 50 && Math.abs(player.getY() - d3.getY()) < 50) {
 				d3.disasterResolved();
 			}
 		}

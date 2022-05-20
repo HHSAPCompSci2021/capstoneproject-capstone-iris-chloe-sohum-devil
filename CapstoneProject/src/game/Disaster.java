@@ -94,7 +94,7 @@ public class Disaster {
 	 */
 	public void reset() {
 		time = LocalTime.now();
-		resolved = false;
+		resolved = true;
 		started = true;
 	}
 	
