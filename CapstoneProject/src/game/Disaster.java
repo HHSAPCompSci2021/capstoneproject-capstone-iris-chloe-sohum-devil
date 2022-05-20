@@ -66,7 +66,6 @@ public class Disaster {
 	public void disasterResolved() {
 		resolved = true;
 		started = false;
-		System.out.println("Resolving " + type);
 	}
 	
 	/**
@@ -94,7 +93,7 @@ public class Disaster {
 	 */
 	public void reset() {
 		time = LocalTime.now();
-		resolved = false;
+		resolved = true;
 		started = true;
 	}
 	

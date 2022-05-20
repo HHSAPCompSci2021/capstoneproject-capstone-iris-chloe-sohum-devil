@@ -48,6 +48,7 @@ public class SecondScreen extends Screen {
 	private int start;
 	private LocalTime end = LocalTime.now();
 	private PImage background;
+	private int disasterCounter;
 	
 	/**
 	 * Intializes the values for each of the objects in the grid 
@@ -91,6 +92,7 @@ public class SecondScreen extends Screen {
 		orders.add(new Orders(surface));
 		player = new Player (surface.loadImage("img/Player.jpg"), 300, 300);
 		background = surface.loadImage("img/UpdatedKitchenGrid.png");
+		disasterCounter = 1;
 		
 	}
 
@@ -110,10 +112,10 @@ public class SecondScreen extends Screen {
 		surface.text("Points: "+player.getCurrency(), 650, 100);
 
 		grid = new Character[20][20];
-		counter.draw(surface, 40,40);
+		counter.draw(surface, 50,50);
 		hole.draw(surface, 50, 50);
 		for(int i = 0; i < ingredients.length; i++) {
-			ingredients[i].draw(surface, 50, 50);
+			ingredients[i].draw(surface, 40, 40);
 		}
 		for(int i = 0; i < orders.size(); i++) {
 			orders.get(i).draw(surface, i);
@@ -129,25 +131,28 @@ public class SecondScreen extends Screen {
 			reset();
 		}
 		
-		if(LocalTime.now().getSecond() == 0 && !d1.isStarted()) {
-			d1.reset();
-		} else if (LocalTime.now().getSecond() == 20 && !d2.isStarted()) {
-			d2.reset();
-		} else if (LocalTime.now().getSecond() == 40 && !d3.isStarted()) {
-			d3.reset();
+		if(LocalTime.now().getSecond() == 0 && !d1.isStarted() && !d2.isStarted() && !d3.isStarted()) {
+			if(disasterCounter == 1) {
+				d1.reset();
+				disasterCounter++;
+			} else if (disasterCounter == 2) {
+				d2.reset();
+				disasterCounter++;
+			} else if (disasterCounter == 3) {
+				d3.reset();
+				disasterCounter = 1;
+			}
 		}
 		
 		if(d1.isStarted()) {
 			d1.drawDisaster(surface);
-			System.out.println("Drawing Fire");
+			
 		}
 		if(d2.isStarted()) {
 			d2.drawDisaster(surface);
-			System.out.println("Drawing Flood");
 		}
 		if(d3.isStarted()) {
 			d3.drawDisaster(surface);
-			System.out.println("Drawing Blackout");
 		}
 		
 		d1.drawEquipment(surface, 75, 75);
@@ -239,13 +244,14 @@ public class SecondScreen extends Screen {
 			}
 		}
 		if (surface.keyCode == KeyEvent.VK_ENTER) {
-			if(Math.abs(player.getX()- d1.getX()) < 10 && Math.abs(player.getY() - d1.getY()) < 10) {
+
+			if(Math.abs(player.getX()- d1.getX()) < 50 && Math.abs(player.getY() - d1.getY()) < 50) {
 				d1.disasterResolved();
 			}
-			else if(Math.abs(player.getX()- d2.getX()) < 10 && Math.abs(player.getY() - d2.getY()) < 10) {
+			else if(Math.abs(player.getX()- d2.getX()) < 50 && Math.abs(player.getY() - d2.getY()) < 50) {
 				d2.disasterResolved();
 			}
-			else if(Math.abs(player.getX()- d3.getX()) < 10 && Math.abs(player.getY() - d3.getY()) < 10) {
+			else if(Math.abs(player.getX()- d3.getX()) < 50 && Math.abs(player.getY() - d3.getY()) < 50) {
 				d3.disasterResolved();
 			}
 		}
