@@ -103,10 +103,10 @@ public class SecondScreen extends Screen {
 		surface.text("Points: "+player.getCurrency(), 650, 100);
 
 		grid = new Character[20][20];
-		counter.draw(surface, 40,40);
+		counter.draw(surface, 50,50);
 		hole.draw(surface, 50, 50);
 		for(int i = 0; i < ingredients.length; i++) {
-			ingredients[i].draw(surface, 50, 50);
+			ingredients[i].draw(surface, 40, 40);
 		}
 		for(int i = 0; i < orders.size(); i++) {
 			orders.get(i).draw(surface, i);
