@@ -66,7 +66,6 @@ public class Disaster {
 	public void disasterResolved() {
 		resolved = true;
 		started = false;
-		System.out.println("Resolving " + type);
 	}
 	
 	/**
