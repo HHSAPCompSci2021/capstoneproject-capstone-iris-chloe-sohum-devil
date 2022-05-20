@@ -13,7 +13,7 @@ import processing.core.PApplet;
  * the drawing surface for the game, and uses the ScreenSwitcher
  * 
  * @author cpoon870
- * @version 5/13/2022
+ * @version 5/20/2022
  */
 public class DrawingSurface extends PApplet implements ScreenSwitcher{
 	

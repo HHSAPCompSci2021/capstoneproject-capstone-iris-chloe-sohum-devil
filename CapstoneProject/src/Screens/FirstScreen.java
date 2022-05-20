@@ -48,9 +48,9 @@ public class FirstScreen extends Screen {
 		surface.text("Here are the controls for the game:", 25, 25);
 		surface.text("- To move around, use the up, down, left, and right arrows keys", 25, 75);
 		surface.text("- To pick up or drop off ingredients, press the spacebar (you\nmay only have one ingredient at a time)", 25, 125);
-		surface.text("- To put out the fire, pick up the fire extinguisher, hold down\nthe left mouse key, and wave it in front of the fire for 2 seconds", 25, 225);
-		surface.text("- To stop the flood, pick up and hold the sandbags by holding\ndown the enter/return key, and releasing it at the door", 25, 325);
-		surface.text("- To turn the power back on, walk over to the light switch (the\nscreen is black), and press return key to turn the lights back on", 25, 425);
+		surface.text("- To put out the fire, pick up the fire extinguisher with the enter/return key", 25, 225);
+		surface.text("- To stop the flood, pick up and hold the sandbags by holding\ndown the enter/return key", 25, 275);
+		surface.text("- To turn the power back on, walk over to the light switch (the\nscreen is black), and press enter/return key to turn the lights\n back on", 25, 375);
 		
 	}
 
