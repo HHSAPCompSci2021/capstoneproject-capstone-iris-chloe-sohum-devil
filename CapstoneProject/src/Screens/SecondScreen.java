@@ -156,6 +156,7 @@ public class SecondScreen extends Screen {
 //		d2.drawDisaster(surface); 
 //		d3.drawDisaster(surface);
 		player.draw(surface); 
+		endGame();
 		
 	}
 
@@ -255,7 +256,7 @@ public class SecondScreen extends Screen {
 	 }
 	 
 	 public void endGame() {
-		 if(player.getLives() < 0) {
+		 if(player.getLives() <= 0) {
 			 surface.switchScreen(ScreenSwitcher.END_SCREEN);
 		 }
 	 }
