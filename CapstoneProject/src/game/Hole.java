@@ -47,6 +47,7 @@ public class Hole {
 						ingredients.remove(ingredients.indexOf(orderIngredients.get(j)));
 				}
 			}
+			
 			if(equal) {
 				orders.remove(i);
 				return true;
