@@ -140,9 +140,9 @@ public class SecondScreen extends Screen {
 			d3.drawDisaster(surface);
 		}
 		
-		d1.drawEquipment(surface, 700, 200, 75, 75);
-		d2.drawEquipment(surface, 700, 300, 75, 75);
-		d3.drawEquipment(surface, 700, 400, 75, 75);
+		d1.drawEquipment(surface, 725, 150, 70, 70);
+		d2.drawEquipment(surface, 725, 235, 70, 70);
+		d3.drawEquipment(surface, 725, 305, 70, 70);
 		
 //		if(LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 30 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 45) {
 //			d1.drawDisaster(surface);
