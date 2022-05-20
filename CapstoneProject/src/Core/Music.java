@@ -8,9 +8,20 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
+/**
+ * allows the game to play background music
+ * 
+ * @author cpoon870
+ * @version 5/20/2022
+ */
 public class Music {
 
 	
+	/**
+	 * method to play music during the game
+	 * 
+	 * @param musicLoc a string with the path of the audio file
+	 */
 	public void playMusic(String musicLoc) { 
 		
 		

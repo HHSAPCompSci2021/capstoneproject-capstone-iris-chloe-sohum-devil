@@ -3,8 +3,8 @@ package Screens;
 /**
  * game screen with the grid 
  * 
- * @author sphadke983
- * @version 5/18/2022
+ * @author sphadke983, Iris Chou, cpoon870
+ * @version 5/20/2022
  */
 
 import java.awt.Desktop.Action;
@@ -73,6 +73,9 @@ public class SecondScreen extends Screen {
 
 	// The statements in the setup() function 
 	// execute once when the program begins
+	/**
+	 * sets up the screen and loads the proper images to the screen
+	 */
 	public void setup() {
 		//600 * 800 window?
 		counter = new Counter(10, 4);
@@ -95,6 +98,10 @@ public class SecondScreen extends Screen {
 	// program is stopped. Each statement is executed in 
 	// sequence and after the last line is read, the first 
 	// line is executed again.
+	/**
+	 * draws out the pictures to the screen to allow the user to play the game
+	 * also draws out disasters and ends the game once the user has 0 lives
+	 */
 	public void draw() {
 		surface.image(background, 0, 0, 800, 600);
 		surface.fill(0);
@@ -162,14 +169,20 @@ public class SecondScreen extends Screen {
 		
 	}
 
+	/**
+	 * finds the time when the mouse is pressed
+	 */
 	public void mousePressed() {
 //		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX,surface.mouseY));
 //		if (button.contains(p))
 //			surface.switchScreen(ScreenSwitcher.GAME_SCREEN);
 		start = LocalTime.now().toSecondOfDay();
-		endGame();
 	}
 	
+	/**
+	 * subtracts a life from the player if the time it takes to release the mouse when resolving
+	 * the disaster is more than 10 seconds
+	 */
 	public void mouseReleased() {
 		if((start - LocalTime.now().toSecondOfDay()) > 10) {
 			if(d1.getDisaster() == 1 || d2.getDisaster() == 1 || d3.getDisaster() == 1) {
@@ -183,10 +196,12 @@ public class SecondScreen extends Screen {
 				player.loseLife();
 			} 
 		}
-		endGame();
 	}
 	
 	//arrow keys are used to move the player around 
+	/**
+	 * allows the player to move around the screen using arrow keys and pressing the space bar to pick up and drop off ingredients
+	 */
 	 public void keyPressed() {					
 
 		if (surface.keyCode == KeyEvent.VK_UP) {
@@ -237,6 +252,10 @@ public class SecondScreen extends Screen {
 	
 	}
 	 
+	 /**
+	  * reset the disasters and orders each time a disaster is not resolved
+	  * takes away a life from the player
+	  */
 	 private void reset() {
 		orders = new ArrayList<Orders>();
 		orders.add(new Orders(surface));
@@ -247,6 +266,11 @@ public class SecondScreen extends Screen {
 		
 	 }
 	 
+	 /**
+	  * allows the player to pick up objects
+	  * 
+	  * @param a an ingredient for the player to pick up
+	  */
 	 public void grabAction(Ingredients a) { 
 			if (Math.abs(player.getX() - a.getX()) < 10) { 
 				if (Math.abs(player.getY() - a.getY()) < 10) { 
@@ -268,6 +292,9 @@ public class SecondScreen extends Screen {
 	 
 	 }
 	 
+	 /**
+	  * ends the game by switching to the end game screen, which allows the player to start again
+	  */
 	 public void endGame() {
 		 if(player.getLives() <= 0) {
 			 surface.switchScreen(ScreenSwitcher.END_SCREEN);
@@ -275,6 +302,9 @@ public class SecondScreen extends Screen {
 	 }
 	 
 	 
+	 /**
+	  * adds points to the player when they complete an order
+	  */
 	 public void orderCompletedPoints() { 
 		 if (hole.drop(player.getOrder(), orders)) { 
 			 player.addCurrency();
