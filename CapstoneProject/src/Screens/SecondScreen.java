@@ -210,19 +210,19 @@ public class SecondScreen extends Screen {
 	 public void keyPressed() {					
 
 		if (surface.keyCode == KeyEvent.VK_UP) {
-			player.walk(0, -5);
+			player.walk(0, -3);
 		}
 
 		else if (surface.keyCode == KeyEvent.VK_DOWN) {
-			player.walk(0, 5);
+			player.walk(0, 3);
 		}
 
 		else if (surface.keyCode == KeyEvent.VK_RIGHT) {
-			player.walk(5, 0);
+			player.walk(3, 0);
 		}
 
 		else if (surface.keyCode == KeyEvent.VK_LEFT) {
-			player.walk(-5, 0);
+			player.walk(-3, 0);
 		} else if (surface.keyCode == KeyEvent.VK_SPACE) {
 			for(Ingredients e: ingredients) {
 				grabAction(e);
