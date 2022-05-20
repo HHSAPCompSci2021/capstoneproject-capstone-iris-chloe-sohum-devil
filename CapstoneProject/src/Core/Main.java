@@ -16,7 +16,7 @@ import processing.core.PApplet;
 
 /**
  * main class to run the program and open up a new drawing surface
- * also used o run music
+ * also used to run music
  * 
  * @author cpoon870
  * @version 5/20/2022

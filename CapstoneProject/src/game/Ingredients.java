@@ -119,6 +119,11 @@ public class Ingredients implements Interactions{
 	}
 
 	@Override
+	/**
+	 * returns if the ingredient was dropped off
+	 * 
+	 * @returns the ingredient itself
+	 */
 	public Ingredients dropOff() {
 		return this;
 		// TODO Auto-generated method stub
@@ -126,6 +131,11 @@ public class Ingredients implements Interactions{
 	}
 
 	@Override
+	/**
+	 * returns if the player lost a life
+	 * 
+	 * @return false
+	 */
 	public boolean loseLife() {
 		return false;
 	}

@@ -80,9 +80,9 @@ public class SecondScreen extends Screen {
 	public void setup() {
 		//600 * 800 window?
 		counter = new Counter(10, 4);
-		d1 = new Disaster ("Fire", 700, 200); 
-		d2 = new Disaster ("Flood", 700, 300); 
-		d3 = new Disaster ("Blackout", 700, 400); 
+		d1 = new Disaster ("Fire", 720, 150); 
+		d2 = new Disaster ("Flood", 720, 225); 
+		d3 = new Disaster ("Blackout", 720, 300); 
 		hole = new Hole (5, 7); 
 		ingredients = new Ingredients[6];
 		for(int i = 0; i < ingredients.length; i++) {
@@ -210,19 +210,19 @@ public class SecondScreen extends Screen {
 	 public void keyPressed() {					
 
 		if (surface.keyCode == KeyEvent.VK_UP) {
-			player.walk(0, -1);
+			player.walk(0, -3);
 		}
 
 		else if (surface.keyCode == KeyEvent.VK_DOWN) {
-			player.walk(0, 1);
+			player.walk(0, 3);
 		}
 
 		else if (surface.keyCode == KeyEvent.VK_RIGHT) {
-			player.walk(1, 0);
+			player.walk(3, 0);
 		}
 
 		else if (surface.keyCode == KeyEvent.VK_LEFT) {
-			player.walk(-1, 0);
+			player.walk(-3, 0);
 		} else if (surface.keyCode == KeyEvent.VK_SPACE) {
 			for(Ingredients e: ingredients) {
 				grabAction(e);
