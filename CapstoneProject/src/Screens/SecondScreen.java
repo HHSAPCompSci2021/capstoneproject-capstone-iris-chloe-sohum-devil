@@ -79,9 +79,9 @@ public class SecondScreen extends Screen {
 	public void setup() {
 		//600 * 800 window?
 		counter = new Counter(10, 4);
-		d1 = new Disaster ("Fire", 1, 10); 
-		d2 = new Disaster ("Flood", 2, 10 ); 
-		d3 = new Disaster ("Blackout", 3,10); 
+		d1 = new Disaster ("Fire", 700, 200); 
+		d2 = new Disaster ("Flood", 700, 300); 
+		d3 = new Disaster ("Blackout", 700, 400); 
 		hole = new Hole (5, 7); 
 		ingredients = new Ingredients[6];
 		for(int i = 0; i < ingredients.length; i++) {
@@ -119,37 +119,40 @@ public class SecondScreen extends Screen {
 			orders.get(i).draw(surface, i);
 		}
 
-		if(d1.isResolved() == false && d1.isStarted()) {
+		if(!d1.isResolved() && d1.isStarted()) {
 			reset();
 		}
-		if(d2.isResolved() == false && d2.isStarted()) {
+		if(!d2.isResolved() && d2.isStarted()) {
 			reset();
 		}
-		if(d3.isResolved() == false && d3.isStarted()) {
+		if(!d3.isResolved() && d3.isStarted()) {
 			reset();
 		}
 		
-		if(LocalTime.now().getSecond() == 0) {
+		if(LocalTime.now().getSecond() == 0 && !d1.isStarted()) {
 			d1.reset();
-		} else if (LocalTime.now().getSecond() == 20) {
+		} else if (LocalTime.now().getSecond() == 20 && !d2.isStarted()) {
 			d2.reset();
-		} else if (LocalTime.now().getSecond() == 40) {
+		} else if (LocalTime.now().getSecond() == 40 && !d3.isStarted()) {
 			d3.reset();
 		}
 		
 		if(d1.isStarted()) {
 			d1.drawDisaster(surface);
+			System.out.println("Drawing Fire");
 		}
 		if(d2.isStarted()) {
 			d2.drawDisaster(surface);
+			System.out.println("Drawing Flood");
 		}
 		if(d3.isStarted()) {
 			d3.drawDisaster(surface);
+			System.out.println("Drawing Blackout");
 		}
 		
-		d1.drawEquipment(surface, 725, 150, 70, 70);
-		d2.drawEquipment(surface, 725, 235, 70, 70);
-		d3.drawEquipment(surface, 725, 305, 70, 70);
+		d1.drawEquipment(surface, 75, 75);
+		d2.drawEquipment(surface, 75, 75);
+		d3.drawEquipment(surface, 75, 75);
 		
 //		if(LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 30 && LocalTime.now().toSecondOfDay() - end.toSecondOfDay() < 45) {
 //			d1.drawDisaster(surface);
@@ -160,9 +163,7 @@ public class SecondScreen extends Screen {
 //		} else if (LocalTime.now().toSecondOfDay() - end.toSecondOfDay() > 60) {
 //			d3.drawDisaster(surface);
 //		}
-//		d1.drawDisaster(surface); 
-//		d2.drawDisaster(surface); 
-//		d3.drawDisaster(surface);
+
 		player.draw(surface); 
 		endGame();
 		
@@ -237,7 +238,18 @@ public class SecondScreen extends Screen {
 				}
 			}
 		}
-		endGame();
+		if (surface.keyCode == KeyEvent.VK_ENTER) {
+			if(Math.abs(player.getX()- d1.getX()) < 10 && Math.abs(player.getY() - d1.getY()) < 10) {
+				d1.disasterResolved();
+			}
+			else if(Math.abs(player.getX()- d2.getX()) < 10 && Math.abs(player.getY() - d2.getY()) < 10) {
+				d2.disasterResolved();
+			}
+			else if(Math.abs(player.getX()- d3.getX()) < 10 && Math.abs(player.getY() - d3.getY()) < 10) {
+				d3.disasterResolved();
+			}
+		}
+	
 	}
 	 
 	 /**
