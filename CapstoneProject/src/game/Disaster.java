@@ -159,6 +159,11 @@ public class Disaster {
 		}
 	}
 	
+	/**
+	 * checks if the disaster was started
+	 * 
+	 * @return true if the disaster was started
+	 */
 	public boolean isStarted() {
 		return started;
 	}
