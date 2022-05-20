@@ -57,6 +57,7 @@ public class SecondScreen extends Screen {
 	public SecondScreen(DrawingSurface surface) {
 		super(800,600);
 		this.surface = surface;
+		
 	/*	counter = new Counter(order, 10, 10);
 		d1 = new Disaster ("Fire", 1, 10); 
 		d2 = new Disaster ("Flood", 2, 10 ); 
@@ -81,12 +82,12 @@ public class SecondScreen extends Screen {
 		hole = new Hole (5, 7); 
 		ingredients = new Ingredients[6];
 		for(int i = 0; i < ingredients.length; i++) {
-			ingredients[i] = new Ingredients(surface, i+1, i*150, 550);
+			ingredients[i] = new Ingredients(surface, i+1, i*135, 550);
 		}
 		orders = new ArrayList<Orders>();
 		orders.add(new Orders(surface));
 		player = new Player (surface.loadImage("img/Player.jpg"), 300, 300);
-		background = surface.loadImage("img/KitchenGrid.png");
+		background = surface.loadImage("img/UpdatedKitchenGrid.png");
 		
 	}
 
