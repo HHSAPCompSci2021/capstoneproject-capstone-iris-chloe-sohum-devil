@@ -238,6 +238,7 @@ public class SecondScreen extends Screen {
 				else if (!plate.isEmpty()) {
 					boolean complete = hole.drop(player.dropOffOrder(), orders);
 					if (complete) {
+						
 						player.addCurrency();
 					}
 				}

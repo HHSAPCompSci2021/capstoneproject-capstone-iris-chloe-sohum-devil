@@ -170,4 +170,12 @@ public class Ingredients implements Interactions{
 		return food;
 	}
 	
+	
+	public boolean equals(Object o) {
+		if (!(o instanceof Ingredients))
+			return false;
+		return ((Ingredients)o).name == name;
+	}
+	
+	
 }

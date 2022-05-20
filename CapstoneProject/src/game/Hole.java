@@ -31,30 +31,53 @@ public class Hole {
 	 * @return returns true if the passed in order exist in the list of orders
 	 */
 	public boolean drop(ArrayList<Ingredients> temp, ArrayList<Orders> orders) {
-		ArrayList<Ingredients> ingredients = copyIngredientList(temp);
+		for(Ingredients i : temp) {
+			System.out.println(i.getName());
+		}
 		
 		for(int i = 0; i < orders.size(); i++) {
 			ArrayList<Ingredients> orderIngredients = orders.get(i).getIngredients();
 			boolean equal = true;
-			if (orderIngredients.size() != ingredients.size()) {
+			if(orderIngredients.size() != temp.size()) {
+				System.out.println("Sizes are different");
 				equal = false;
-			}
-			else {
-				for(int j = 0; j < orderIngredients.size(); j++) {
-					if(ingredients.indexOf(orderIngredients.get(j)) == -1)
-						equal = false;
-					else
-						ingredients.remove(ingredients.indexOf(orderIngredients.get(j)));
-				}
+			} else if (!temp.containsAll(orderIngredients)) {
+				equal = false;
+				System.out.println("Does not contain everything");
 			}
 			
 			if(equal) {
+				System.out.println("Dish is correct");
 				orders.remove(i);
 				return true;
 			}
-			ingredients = copyIngredientList(temp);
 		}
 		return false;
+		
+//		ArrayList<Ingredients> ingredients = copyIngredientList(temp);
+//		
+//		for(int i = 0; i < orders.size(); i++) {
+//			ArrayList<Ingredients> orderIngredients = orders.get(i).getIngredients();
+//			boolean equal = true;
+//			if (orderIngredients.size() != ingredients.size()) {
+//				equal = false;
+//			}
+//			else {
+//				for(int j = 0; j < orderIngredients.size(); j++) {
+//					if(ingredients.indexOf(orderIngredients.get(j)) == -1)
+//						equal = false;
+//					else
+//						ingredients.remove(ingredients.indexOf(orderIngredients.get(j)));
+//				}
+//			}
+//			
+//			if(equal) {
+//				orders.remove(i);
+//				return true;
+//			}
+//			ingredients = copyIngredientList(temp);
+//		}
+//		return false;
 	}
 	
 	/**
