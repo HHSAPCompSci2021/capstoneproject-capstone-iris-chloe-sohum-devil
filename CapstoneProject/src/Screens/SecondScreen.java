@@ -227,7 +227,7 @@ public class SecondScreen extends Screen {
 			for(Ingredients e: ingredients) {
 				grabAction(e);
 			}
-			if (Math.abs(player.getX()- hole.getX()*50) < 10 && Math.abs(player.getY() - hole.getY()*50) < 10) { 
+			if (Math.abs(player.getX()- hole.getX()*50) < 50 && Math.abs(player.getY() - hole.getY()*50) < 50) { 
 				ArrayList<Ingredients> plate = player.getOrder();
 				Disaster equip = player.getEquipment();
 //				for (Ingredients i : plate) {
@@ -278,8 +278,8 @@ public class SecondScreen extends Screen {
 	  * @param a an ingredient for the player to pick up
 	  */
 	 public void grabAction(Ingredients a) { 
-			if (Math.abs(player.getX() - a.getX()) < 10) { 
-				if (Math.abs(player.getY() - a.getY()) < 10) { 
+			if (Math.abs(player.getX() - a.getX()) < 50) { 
+				if (Math.abs(player.getY() - a.getY()) < 50) { 
 					player.pickUp(a);
 				} 
 			}
