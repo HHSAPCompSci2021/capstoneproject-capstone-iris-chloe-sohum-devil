@@ -6,7 +6,7 @@ import game.Player;
  * interface for the screens
  * 
  * @author cpoon870
- * @version 5/13/2022
+ * @version 5/20/2022
  */
 public interface ScreenSwitcher {
 	public static final int MENU_SCREEN = 0;

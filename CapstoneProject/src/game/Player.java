@@ -14,7 +14,7 @@ import processing.core.PImage;
  * runs the player for the game, allows the player to move around the screen, pick up, and drop off objects
  * 
  * @author cpoon870 & sphadke983 
- * @version 5/18/2022
+ * @version 5/20/2022
  */
 public class Player extends Rectangle2D.Double{
 	
@@ -78,6 +78,11 @@ public class Player extends Rectangle2D.Double{
 		return temp;
 	}
 	
+	/**
+	 * method to drop off the equipment for the disasters
+	 * 
+	 * @return the disaster that the equipment is being dropped off for
+	 */
 	public Disaster dropOffEquipment() {
 		Disaster temp = disaster;
 		disaster = null;
@@ -97,43 +102,88 @@ public class Player extends Rectangle2D.Double{
 		}
 	}
 	
+	/**
+	 * get the ingredients inside the order
+	 * 
+	 * @return and arraylist of the ingredients in the order
+	 */
 	public ArrayList<Ingredients> getOrder() {
 		return ingredient;
 	}
 	
+	/**
+	 * get the equipment needed for the disaster
+	 * 
+	 * @return the disaster that is being run
+	 */
 	public Disaster getEquipment() {
 		return disaster;
 	}
 	
+	/**
+	 * subtract a life from the player
+	 */
 	public void loseLife() {
 		lives = lives - 1;
 	}
 	
+	/**
+	 * add a life to the player
+	 */
 	public void gainLife() {
 		lives = lives + 1;
 	}
 	
+	/**
+	 * get the lives the player has
+	 * 
+	 * @return an integer for the number of lives that the person has
+	 */
 	public int getLives() {
 		return lives;
 	}
 	
+	/**
+	 * get the x coordinate of the player
+	 * 
+	 * @return a double with the x coordinate of the player
+	 */
 	public double getX() { 
 		return x; 
 	}
 	
+	/**
+	 * get the y coordinate of the player
+	 * 
+	 * @return a double with the y coordinate of the player
+	 */
 	public double getY() { 
 		return y; 
 	}
 	
+	/**
+	 * add 10 points to the players currency
+	 */
 	public void addCurrency() {
 		
 		currency = currency + 10;
 	}
 	
+	/**
+	 * get the currency of the player
+	 * 
+	 * @return an integer with the number of points the player has
+	 */
 	public int getCurrency() {
 		return currency;
 	}
 	
+	/**
+	 * check is ten seconds have passed
+	 * 
+	 * @param start the current time
+	 * @return true is more than ten seconds have passed
+	 */
 	public boolean tenSeconds(LocalTime start) {
 		if((LocalTime.now().toSecondOfDay() - start.toSecondOfDay()) > 10) {
 			return true;

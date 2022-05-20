@@ -7,7 +7,7 @@ import processing.core.PApplet;
  * The hole in the ground that the player drops food through
  * 
  * @author Iris Chou
- * @version 5/17/2022
+ * @version 5/20/2022
  */
 public class Hole {
 	
@@ -57,6 +57,12 @@ public class Hole {
 		return false;
 	}
 	
+	/**
+	 * moves the current listof ingredients into a new temporary ingredients list
+	 * 
+	 * @param temp an arraylist of ingredients to be put into a new temporary arraylist
+	 * @return an arraylist of ingredients that matches the arraylist put in as a parameter
+	 */
 	private ArrayList<Ingredients> copyIngredientList(ArrayList<Ingredients> temp) {
 		ArrayList<Ingredients> ingredients = new ArrayList<Ingredients>();
 		for(Ingredients i : temp) {
