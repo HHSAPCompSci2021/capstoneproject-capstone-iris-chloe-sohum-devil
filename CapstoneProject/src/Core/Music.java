@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 /**
  * allows the game to play background music
  * 
- * @author cpoon870
+ * @author cpoon870 and sphadke983
  * @version 5/20/2022
  */
 public class Music {
