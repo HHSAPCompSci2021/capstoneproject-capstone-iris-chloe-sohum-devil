@@ -8,7 +8,7 @@ import processing.core.PApplet;
  * Each type of disaster has its own unique fix.
  * 
  * @author Iris Chou
- * @version 5/18/2022
+ * @version 5/20/2022
  */
 
 public class Disaster {
@@ -39,7 +39,7 @@ public class Disaster {
 		else if(type.equals("Blackout")) {
 			picture = "Lightswitch.png";
 		}
-		resolved = false;
+		resolved = true;
 		x = xcord;
 		y = ycord;
 		time = LocalTime.now();
@@ -66,6 +66,7 @@ public class Disaster {
 	public void disasterResolved() {
 		resolved = true;
 		started = false;
+		System.out.println("Resolving " + type);
 	}
 	
 	/**
@@ -84,7 +85,7 @@ public class Disaster {
 	 * @param width the width of the grids
 	 * @param height the height of the grids
 	 */
-	public void drawEquipment(PApplet drawer, int x, int y, double width, double height) {
+	public void drawEquipment(PApplet drawer, double width, double height) {
 		drawer.image(drawer.loadImage("img/" + picture), x, y, (float)width, (float)height);
 	}
 	
@@ -93,7 +94,7 @@ public class Disaster {
 	 */
 	public void reset() {
 		time = LocalTime.now();
-		disasterResolved();
+		resolved = false;
 		started = true;
 	}
 	
@@ -108,17 +109,17 @@ public class Disaster {
 	public void drawDisaster(PApplet drawer) {
 		switch(type) {
 		case "Fire":
-			drawer.image(drawer.loadImage("img/Fire.png"), 0, 0, drawer.width, drawer.height);
+			drawer.image(drawer.loadImage("img/Fire.png"), 0, 0, 800, 600);
 			break;
 		case "Flood":
 			drawer.fill(70, 95, 240);
 			drawer.noStroke();
-			drawer.rect(0, 0, drawer.width, drawer.height);
+			drawer.rect(0, 0, 800, 600);
 			break;
 		case "Blackout":
 			drawer.noStroke();
 			drawer.fill(0);
-			drawer.rect(0, 0, drawer.width, drawer.height);
+			drawer.rect(0, 0, 800, 600);
 			break;
 		}
 	}
