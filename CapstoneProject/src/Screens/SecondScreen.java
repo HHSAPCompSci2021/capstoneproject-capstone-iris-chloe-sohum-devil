@@ -137,27 +137,42 @@ public class SecondScreen extends Screen {
 			reset();
 		}
 		
+		if(LocalTime.now().getSecond() == 0 && !addedOrder) {
+			orders.add(new Orders(surface));
+			addedOrder = true;
+		}
 		if(LocalTime.now().getSecond() == 30 && !addedOrder) {
 			orders.add(new Orders(surface));
 			addedOrder = true;
 		}
 		
-		if(LocalTime.now().getSecond() == 32) {
+		if(LocalTime.now().getSecond() == 2 || LocalTime.now().getSecond() == 32) {
 			addedOrder = false;
 		}
 		
-		if(LocalTime.now().getSecond() == 0 && !d1.isStarted() && !d2.isStarted() && !d3.isStarted()) {
-			if(disasterCounter == 1) {
-				d1.reset();
-				disasterCounter++;
-			} else if (disasterCounter == 2) {
-				d2.reset();
-				disasterCounter++;
-			} else if (disasterCounter == 3) {
-				d3.reset();
-				disasterCounter = 1;
-			}
+		
+		if(LocalTime.now().getSecond() == 0 && !d1.isStarted()) {
+			d1.reset();
 		}
+		if(LocalTime.now().getSecond() == 20 && !d2.isStarted()) {
+			d2.reset();
+		}
+		if(LocalTime.now().getSecond() == 40 && !d3.isStarted()) {
+			d3.reset();
+		}
+		
+//		if(LocalTime.now().getSecond() == 0 && !d1.isStarted() && !d2.isStarted() && !d3.isStarted()) {
+//			if(disasterCounter == 1) {
+//				d1.reset();
+//				disasterCounter++;
+//			} else if (disasterCounter == 2) {
+//				d2.reset();
+//				disasterCounter++;
+//			} else if (disasterCounter == 3) {
+//				d3.reset();
+//				disasterCounter = 1;
+//			}
+//		}
 		
 		if(d1.isStarted()) {
 			d1.drawDisaster(surface);
