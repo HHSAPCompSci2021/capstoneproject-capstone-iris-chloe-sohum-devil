@@ -7,7 +7,7 @@ import processing.core.PApplet;
  * The hole in the ground that the player drops food through
  * 
  * @author Iris Chou
- * @version 5/20/2022
+ * @version 5/21/2022
  */
 public class Hole {
 	
@@ -17,8 +17,8 @@ public class Hole {
 	/**
 	 * Constructor for the hole with a pair of xy-coordinates
 	 * 
-	 * @param xcord
-	 * @param ycord
+	 * @param xcord the x-coordinates of the hole
+	 * @param ycord the y-coordinates of the hole
 	 */
 	public Hole(int xcoord, int ycoord) {
 		x = xcoord;
@@ -39,15 +39,15 @@ public class Hole {
 			ArrayList<Ingredients> orderIngredients = orders.get(i).getIngredients();
 			boolean equal = true;
 			if(orderIngredients.size() != temp.size()) {
-				System.out.println("Sizes are different");
+				//System.out.println("Sizes are different");
 				equal = false;
 			} else if (!temp.containsAll(orderIngredients)) {
 				equal = false;
-				System.out.println("Does not contain everything");
+				//System.out.println("Does not contain everything");
 			}
 			
 			if(equal) {
-				System.out.println("Dish is correct");
+				//System.out.println("Dish is correct");
 				orders.remove(i);
 				return true;
 			}

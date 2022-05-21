@@ -19,7 +19,7 @@ import processing.core.PApplet;
  * also used to run music
  * 
  * @author cpoon870
- * @version 5/20/2022
+ * @version 5/21/2022
  */
 public class Main {
 
@@ -33,7 +33,7 @@ public class Main {
 		PSurfaceAWT.SmoothCanvas canvas = (PSurfaceAWT.SmoothCanvas) surf.getNative();
 		JFrame window = (JFrame)canvas.getFrame();
 
-		window.setSize(500, 300);
+		window.setSize(800, 600);
 		window.setMinimumSize(new Dimension(100,100));
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setResizable(true);
