@@ -8,7 +8,7 @@ import Core.DrawingSurface;
   * The order class will be used to create an order, randomizing between the possible ingredients
   * 
   * @author cpoon870 & Iris Chou
-  * @version 05/20/2022
+  * @version 05/21/2022
   */
 public class Orders implements Interactions{
 
@@ -18,6 +18,8 @@ public class Orders implements Interactions{
 	/**
 	 * creates a new order with a random amount of ingredients needed, from 1 to 4 ingredients
 	 * random adds ingredients to the order
+	 * 
+	 * @param drawer the PApplet the order is to be drawn on
 	 */
 	public Orders(PApplet drawer) {
 		ingredientsList = new ArrayList<Ingredients>();

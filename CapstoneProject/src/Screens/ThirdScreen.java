@@ -8,13 +8,12 @@ import Core.DrawingSurface;
 /**
  * The ending screen for the player that can take the player back to the menu screen
  * 
- * @author irisc
- * @version 5/20/2022
+ * @author Iris Chou
+ * @version 5/21/2022
  */
 public class ThirdScreen extends Screen{
 	private DrawingSurface surface;
 	private Rectangle button;
-	private int points;
 
 	/**
 	 * Makes a new screen on the drawing surface with a button
@@ -57,7 +56,7 @@ public class ThirdScreen extends Screen{
 
 
 	/**
-	 * checks if the mouse was pressed and if it is inside the button
+	 * Checks if the mouse was pressed and if it is inside the button
 	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX,surface.mouseY));

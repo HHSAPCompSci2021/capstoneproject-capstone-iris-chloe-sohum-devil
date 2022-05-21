@@ -49,6 +49,7 @@ public class SecondScreen extends Screen {
 	private LocalTime end = LocalTime.now();
 	private PImage background;
 	private int disasterCounter;
+	private boolean addedOrder;
 	
 	/**
 	 * Intializes the values for each of the objects in the grid 
@@ -93,6 +94,7 @@ public class SecondScreen extends Screen {
 		player = new Player (surface.loadImage("img/Player.jpg"), 300, 300);
 		background = surface.loadImage("img/UpdatedKitchenGrid.png");
 		disasterCounter = 1;
+		addedOrder = false;
 		
 	}
 
@@ -129,6 +131,19 @@ public class SecondScreen extends Screen {
 		}
 		if(!d3.isResolved() && d3.isStarted()) {
 			reset();
+		}
+		
+		if(orders.size() > 5) {
+			reset();
+		}
+		
+		if(LocalTime.now().getSecond() == 30 && !addedOrder) {
+			orders.add(new Orders(surface));
+			addedOrder = true;
+		}
+		
+		if(LocalTime.now().getSecond() == 32) {
+			addedOrder = false;
 		}
 		
 		if(LocalTime.now().getSecond() == 0 && !d1.isStarted() && !d2.isStarted() && !d3.isStarted()) {

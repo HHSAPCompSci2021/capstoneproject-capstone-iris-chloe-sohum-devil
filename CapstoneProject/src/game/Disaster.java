@@ -8,7 +8,7 @@ import processing.core.PApplet;
  * Each type of disaster has its own unique fix.
  * 
  * @author Iris Chou
- * @version 5/20/2022
+ * @version 5/21/2022
  */
 
 public class Disaster {
@@ -24,6 +24,8 @@ public class Disaster {
 	 * Constructor that takes in a String to identify the disaster's type
 	 * 
 	 * @param s String of the disaster type, where capitalization matters ("Fire", "Flood", "Blackout")
+	 * @param xcord the x-coordinate of the disaster resolving equipment
+	 * @param ycord the y-coordinate of the disaster resolving equipment
 	 * @throws IllegalArgumentException
 	 */
 	public Disaster(String s, int xcord, int ycord) throws IllegalArgumentException{
@@ -160,7 +162,7 @@ public class Disaster {
 	}
 	
 	/**
-	 * checks if the disaster was started
+	 * Checks if the disaster was started
 	 * 
 	 * @return true if the disaster was started
 	 */

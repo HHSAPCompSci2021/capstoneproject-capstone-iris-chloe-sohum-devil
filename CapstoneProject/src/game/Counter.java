@@ -6,7 +6,7 @@ import processing.core.PApplet;
  * The table that the player can place one dish on
  * 
  * @author Iris Chou
- * @version 5/20/2022
+ * @version 5/21/2022
  */
 
 public class Counter {
@@ -19,8 +19,8 @@ public class Counter {
 	/**
 	 * Constructor for the counter with a pair of xy-coordinates
 	 * 
-	 * @param xcord
-	 * @param ycord
+	 * @param xcord the x-coordinate of the counter
+	 * @param ycord the y-coordinate of the counter
 	 */
 	public Counter(int xcord, int ycord) {
 		holding = null;
@@ -32,8 +32,8 @@ public class Counter {
 	 * Constructor initializes itself with a pair of xy-coordinates and an order already placed on it
 	 * 
 	 * @param order the dish that should be placed on the counter
-	 * @param xcord
-	 * @param ycord
+	 * @param xcord the x-coordinate of the counter
+	 * @param ycord the y-coordinate of the counter
 	 */
 	public Counter(Orders order, int xcord, int ycord) {
 		holding = order;

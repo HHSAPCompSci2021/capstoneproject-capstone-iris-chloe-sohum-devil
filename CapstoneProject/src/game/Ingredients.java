@@ -10,7 +10,7 @@ import processing.core.PImage;
  * The ingredients are: onion, squirrel, rotten tomato, rabbit, smelly cheese, radioactive slime
  * 
  * @author cpoon870 & Iris Chou
- * @version 5/20/2022
+ * @version 5/21/2022
  */
 public class Ingredients implements Interactions{
 
@@ -24,6 +24,7 @@ public class Ingredients implements Interactions{
 	 * creates a new ingredient based off the integer assigned for the name
 	 * 1-onion, 2-squirrel, 3-tomato, 4-rabbit, 5-cheese, 6-slime
 	 * 
+	 * @param drawer the PApplet that the ingredient is to be drawn on
 	 * @param name the integer that assigns the ingredients to a name
 	 * @param x the x coordinate of the ingredient
 	 * @param y the y coordinate of the ingredient
@@ -109,7 +110,7 @@ public class Ingredients implements Interactions{
 
 	@Override
 	/**
-	 * Returns this ingredient, so it can be picker up
+	 * Returns this ingredient, so it can be picked up
 	 * 
 	 * @return returns this ingredient (itself)
 	 */
@@ -160,6 +161,7 @@ public class Ingredients implements Interactions{
 	
 	/**
 	 * gets the type of ingredients
+	 * 
 	 * @return a string with the name of the ingredient
 	 */
 	public String getName() {
@@ -180,7 +182,11 @@ public class Ingredients implements Interactions{
 		return food;
 	}
 	
-	
+	/**
+	 * Checks if an ingredient is equal to (the same type as) this one
+	 * 
+	 * @return returns true if the two ingredients have the same type, false otherwise
+	 */
 	public boolean equals(Object o) {
 		if (!(o instanceof Ingredients))
 			return false;

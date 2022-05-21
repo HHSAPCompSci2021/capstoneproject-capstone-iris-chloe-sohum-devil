@@ -28,12 +28,14 @@ public class Hole {
 	/**
 	 * Drop a set of ingredients into the hole
 	 * 
-	 * @return returns true if the passed in order exist in the list of orders
+	 * @param temp the list of ingredients dropped into the hole
+	 * @param orders the list of orders the player must complete
+	 * @return returns true if the passed in order exists in the list of orders
 	 */
 	public boolean drop(ArrayList<Ingredients> temp, ArrayList<Orders> orders) {
-		for(Ingredients i : temp) {
-			System.out.println(i.getName());
-		}
+//		for(Ingredients i : temp) {
+//			System.out.println(i.getName());
+//		}
 		
 		for(int i = 0; i < orders.size(); i++) {
 			ArrayList<Ingredients> orderIngredients = orders.get(i).getIngredients();
@@ -110,6 +112,7 @@ public class Hole {
 		drawer.ellipseMode(drawer.CORNER);
 		drawer.ellipse((float)width*x, (float)height*y, (float)width, (float)height);
 	}
+	
 	/**
 	 * Gets the x-coordinate of the hole
 	 * 
