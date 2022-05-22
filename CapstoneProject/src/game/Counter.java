@@ -1,6 +1,7 @@
 package game;
 
 import processing.core.PApplet;
+import java.util.ArrayList;
 
 /**
  * The table that the player can place one dish on
@@ -11,7 +12,7 @@ import processing.core.PApplet;
 
 public class Counter {
 
-	private Orders holding;
+	private ArrayList<Ingredients> holding;
 	private static final String IMAGE = "Counter.png";
 	private int x;
 	private int y;
@@ -35,7 +36,7 @@ public class Counter {
 	 * @param xcord the x-coordinate of the counter
 	 * @param ycord the y-coordinate of the counter
 	 */
-	public Counter(Orders order, int xcord, int ycord) {
+	public Counter(ArrayList<Ingredients> order, int xcord, int ycord) {
 		holding = order;
 		x = xcord;
 		y = ycord;
@@ -48,7 +49,7 @@ public class Counter {
 	 * @param order the dish that is getting placed on the counter
 	 * @return returns true if the dish is successfully placed (nothing already on the counter), false otherwise
 	 */
-	public boolean place(Orders order) {
+	public boolean place(ArrayList<Ingredients> order) {
 		if(holding == null) {
 			holding = order;
 			return true;
@@ -62,8 +63,8 @@ public class Counter {
 	 * @return the dish that is on the counter (null is returned if nothing was on the table)
 	 * @post the counter becomes empty (not storing a dish)
 	 */
-	public Orders pickUp() {
-		Orders temp = holding;
+	public ArrayList<Ingredients> pickUp() {
+		ArrayList<Ingredients> temp = holding;
 		holding = null;
 		return temp;
 	}
@@ -86,6 +87,9 @@ public class Counter {
 	 */
 	public void draw(PApplet drawer, double width, double height) {
 		drawer.image(drawer.loadImage("img/Counter.png"), (float)width*x, (float)height*y, (float)width, (float)height);
+		if(holding != null) {
+			drawer.image(drawer.loadImage("img/Dish.png"), (float)width*x + 5, (float)(height*y - height/2), (float)width-10, (float)height );
+		}
 	}
 	
 	/**

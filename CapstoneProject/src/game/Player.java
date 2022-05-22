@@ -70,6 +70,16 @@ public class Player extends Rectangle2D.Double{
 	}
 	
 	/**
+	 * Player picks up an order
+	 * 
+	 * @param order the dish that the player is picking up
+	 * @post the previous dish that the player was holding is deleted
+	 */
+	public void pickUpOrder(ArrayList<Ingredients> order) {
+		ingredient = order;
+	}
+	
+	/**
 	 * allows the player to drop off items
 	 */
 	public ArrayList<Ingredients> dropOffOrder() {

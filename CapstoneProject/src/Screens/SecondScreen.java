@@ -137,16 +137,12 @@ public class SecondScreen extends Screen {
 			reset();
 		}
 		
-		if(LocalTime.now().getSecond() == 0 && !addedOrder) {
-			orders.add(new Orders(surface));
-			addedOrder = true;
-		}
-		if(LocalTime.now().getSecond() == 30 && !addedOrder) {
+		if(LocalTime.now().getSecond() % 15 == 0 && !addedOrder) {
 			orders.add(new Orders(surface));
 			addedOrder = true;
 		}
 		
-		if(LocalTime.now().getSecond() == 2 || LocalTime.now().getSecond() == 32) {
+		if(LocalTime.now().getSecond() % 15 == 2) {
 			addedOrder = false;
 		}
 		
@@ -271,6 +267,16 @@ public class SecondScreen extends Screen {
 						
 						player.addCurrency();
 					}
+				}
+			}
+			else if (Math.abs(player.getX()- counter.getX()*50) < 50 && Math.abs(player.getY() - counter.getY()*50) < 50) {
+				ArrayList<Ingredients> plate = player.getOrder();
+				if(plate.isEmpty()) {
+					player.pickUpOrder(counter.pickUp());
+				} else {
+					boolean placed = counter.place(plate);
+					if(placed)
+						player.dropOffOrder();
 				}
 			}
 		}
