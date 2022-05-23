@@ -52,7 +52,7 @@ public class Main {
             Clip c = AudioSystem.getClip();
             c.open(ais); //Clip opens AudioInputStream
             c.start(); //Start playing audio
-
+            c.loop(Clip.LOOP_CONTINUOUSLY);
             //sleep thread for length of the song
             Thread.sleep((int)(c.getMicrosecondLength() * 0.001));
         } catch (Exception e) {
