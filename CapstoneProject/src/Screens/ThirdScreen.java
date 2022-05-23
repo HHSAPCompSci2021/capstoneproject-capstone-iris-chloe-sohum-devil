@@ -40,11 +40,11 @@ public class ThirdScreen extends Screen{
 		surface.background(255,255,255);
 		surface.textAlign(surface.CENTER, surface.CENTER);
 		
-		surface.rect(button.x, button.y, button.width, button.height, 10, 10, 10, 10);
+//		surface.rect(button.x, button.y, button.width, button.height, 10, 10, 10, 10);
 		surface.fill(0);
-		String str = "Play again";
-		surface.textSize(25);
-		surface.text(str, button.x, button.y, button.width, button.height);
+//		String str = "Play again";
+//		surface.textSize(25);
+//		surface.text(str, button.x, button.y, button.width, button.height);
 		
 		
 		surface.fill(255, 0, 0);
@@ -59,8 +59,8 @@ public class ThirdScreen extends Screen{
 	 * Checks if the mouse was pressed and if it is inside the button
 	 */
 	public void mousePressed() {
-		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX,surface.mouseY));
-		if (button.contains(p))
-			surface.switchScreen(ScreenSwitcher.MENU_SCREEN);
+//		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX,surface.mouseY));
+//		if (button.contains(p))
+//			surface.switchScreen(ScreenSwitcher.MENU_SCREEN);
 	}
 }
